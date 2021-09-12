@@ -59,8 +59,20 @@ namespace Helpful_debuger
             ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
             foreach (ManagementObject obj in myVideoObject.Get())
             {
-                SystemInfoBox.Text = "Name - " + obj["Name"] + nl + "Status  -  " + obj["Status"] + nl + "Caption  -  " + obj["Caption"] + nl + "DeviceID  -  " + obj["DeviceID"] + nl + "AdapterRAM  -  " + obj["AdapterRAM"] + nl + "AdapterDACType  -  " + obj["AdapterDACType"] + "Monochrome  -  " + obj["Monochrome"] + nl + "InstalledDisplayDrivers  -  " + obj["InstalledDisplayDrivers"] + nl + "DriverVersion  -  " + obj["DriverVersion"] + nl + "VideoProcessor  -  " + obj["VideoProcessor"] + nl + "VideoArchitecture  -  " + obj["VideoArchitecture"] + nl + "VideoMemoryType  -  " + obj["VideoMemoryType"];
-            }
+                SystemInfoBox.AppendText("Name  -  " + obj["Name"] + nl);
+                SystemInfoBox.AppendText("Status  -  " + obj["Status"] + nl);
+                SystemInfoBox.AppendText("Caption  -  " + obj["Caption"] + nl);
+                SystemInfoBox.AppendText("DeviceID  -  " + obj["DeviceID"] + nl);
+                SystemInfoBox.AppendText("AdapterRAM  -  " + obj["AdapterRAM"] + nl);
+                SystemInfoBox.AppendText("AdapterDACType  -  " + obj["AdapterDACType"] + nl);
+                SystemInfoBox.AppendText("Monochrome  -  " + obj["Monochrome"] + nl);
+                SystemInfoBox.AppendText("InstalledDisplayDrivers  -  " + obj["InstalledDisplayDrivers"] + nl);
+                SystemInfoBox.AppendText("DriverVersion  -  " + obj["DriverVersion"] + nl);
+                SystemInfoBox.AppendText("VideoProcessor  -  " + obj["VideoProcessor"] + nl);
+                SystemInfoBox.AppendText("VideoArchitecture  -  " + obj["VideoArchitecture"] + nl);
+                SystemInfoBox.AppendText("VideoMemoryType  -  " + obj["VideoMemoryType"] + nl);
+                SystemInfoBox.AppendText(nl);
+            }    
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
