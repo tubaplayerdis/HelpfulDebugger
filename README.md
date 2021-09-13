@@ -6,3 +6,4 @@ NOTES
 - This program only works with windows
 - Dont change anything unless you know what your doing
 - This program is in early development I will update it when I have time
+- You need to compile yourself for latest version otherwise build will be in releases
