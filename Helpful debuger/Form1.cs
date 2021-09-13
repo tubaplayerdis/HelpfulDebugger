@@ -448,11 +448,11 @@ namespace Helpful_debuger
             {
                 if (Autoclickercheck.Checked)
                 {
-                    if (GetAsyncKeyState(Keys.F2) < 0)
+                    if (GetAsyncKeyState(Keys.F9) < 0)
                     {
                         clickingAblilty = false;
                     }
-                    else if (GetAsyncKeyState(Keys.F1) < 0)
+                    else if (GetAsyncKeyState(Keys.F8) < 0)
                     {
                         clickingAblilty = true;
                     }
