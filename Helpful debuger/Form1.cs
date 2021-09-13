@@ -66,7 +66,7 @@ namespace Helpful_debuger
                 CursorPosBox2.Visible = false;
                 CursorPosBox2.Enabled = false;
             }
-            
+            //69 8======= > {()}
             
 
         }
@@ -97,7 +97,7 @@ namespace Helpful_debuger
             return string.Format("{0:n1} {1}", adjustedSize, SizeSuffixes[mag]);
         }
 
-        // 8===== > {()} 69 nine lol
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
