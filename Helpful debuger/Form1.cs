@@ -220,7 +220,7 @@ namespace Helpful_debuger
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Process " + qu + proccesname + qu + "does not exist therefore it cannot be terminated, if you are seeing it is a bug");
+                        MessageBox.Show("Process " + qu + proccesname + qu + "does not exist therefore it cannot be terminated, if you are seeing this it is a bug");
                     }
                     
                     
