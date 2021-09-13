@@ -177,7 +177,7 @@ namespace Helpful_debuger
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 19);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Current processes open";
+            this.label1.Text = "Current processes running";
             // 
             // refreshbutton
             // 
