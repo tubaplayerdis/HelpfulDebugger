@@ -189,7 +189,7 @@ namespace Helpful_debuger
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Information - Helpful debuger dev build v1.0";
+            this.Text = "Helpful Debugger - Information";
             this.ResumeLayout(false);
             this.PerformLayout();
 
