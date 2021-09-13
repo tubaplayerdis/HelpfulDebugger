@@ -474,7 +474,7 @@ namespace Helpful_debuger
             this.Controls.Add(this.CursorDebugCheckBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Helpful Debuger Dev Build v1.0";
+            this.Text = "Helpful Debugger Release 1.0";
             this.ResumeLayout(false);
             this.PerformLayout();
 
