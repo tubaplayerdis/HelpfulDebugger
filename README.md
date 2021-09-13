@@ -1,4 +1,4 @@
-# HelpfulDebuger
+# HelpfulDebugger
 
 This is a simple debugger all you need to do is build the program in visual studio and then run it!
 
@@ -7,3 +7,4 @@ NOTES
 - Dont change anything unless you know what your doing
 - This program is in early development I will update it when I have time
 - You need to compile yourself for latest version otherwise build will be in releases
+- Windows only
