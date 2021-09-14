@@ -402,6 +402,11 @@ namespace Helpful_debuger
                 startautobutton.Visible = true;
                 stopautobutton.Visible = true;
                 applybutton.Visible = true;
+                Intervalsbox.Enabled = true;
+                intervallabel.Enabled = true;
+                startautobutton.Enabled = true;
+                stopautobutton.Enabled = true;
+                applybutton.Enabled = true;
                 
             }
             else
@@ -411,6 +416,11 @@ namespace Helpful_debuger
                 startautobutton.Visible = false;
                 stopautobutton.Visible = false;
                 applybutton.Visible = false;
+                Intervalsbox.Enabled = false;
+                intervallabel.Enabled = false;
+                startautobutton.Enabled = false;
+                stopautobutton.Enabled = false;
+                applybutton.Enabled = false;
                 
             }
         }
