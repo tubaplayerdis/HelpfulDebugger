@@ -197,7 +197,7 @@ namespace Helpful_debuger
         private void refreshbutton_Click(object sender, EventArgs e)
         {
             var t3 = Task.Run(() => UpdateBoxWithApps());
-            MessageBox.Show("Refreshing");
+            MessageBox.Show("Successfully Refreshed");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -436,7 +436,17 @@ namespace Helpful_debuger
             }
             else
             {
-                intervals = int.Parse(Intervalsbox.Text);
+                if(parsedvalue < 1)
+                {
+                    MessageBox.Show("You need to enter a number that is not a negative interger or zero");
+                    return;
+                }
+                else
+                {
+                    intervals = int.Parse(Intervalsbox.Text);
+                    MessageBox.Show("Successfully applied number");
+                }
+                
             }
         }
 
