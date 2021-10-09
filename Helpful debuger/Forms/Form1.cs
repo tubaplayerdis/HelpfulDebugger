@@ -15,6 +15,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Helpful_debugger;
 using Helpful_debuger;
+using Helpful_debugger.Forms;
 
 namespace Helpful_debuger
 {
@@ -52,6 +53,7 @@ namespace Helpful_debuger
             vars.CreateCahseFolderAndDocument();
             funcs.ClearOutputCashe();
             funcs.AddToOutputCashe("Form1.cs has started");
+            
 
         }
 
@@ -683,6 +685,7 @@ namespace Helpful_debuger
 
         private void button11_Click(object sender, EventArgs e)
         {
+            
             OutputForm outwindow = new OutputForm();
             outwindow.Show();
         }
@@ -690,6 +693,13 @@ namespace Helpful_debuger
         private void Form1_Activated(object sender, EventArgs e)
         {
             funcs.AddToOutputCashe("clicked Form1");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            PasswordCreatorForm passwid = new PasswordCreatorForm();
+            passwid.Show();
+            funcs.AddToOutputCashe("Opened password generator");
         }
     }
 }

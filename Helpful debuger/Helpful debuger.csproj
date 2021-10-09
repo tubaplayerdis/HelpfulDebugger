@@ -85,6 +85,12 @@
     <Compile Include="Forms\OutputForm.Designer.cs">
       <DependentUpon>OutputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PasswordCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordCreatorForm.Designer.cs">
+      <DependentUpon>PasswordCreatorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NormalCSFiles\GlobalObjects.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OutputForm.resx">
       <DependentUpon>OutputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordCreatorForm.resx">
+      <DependentUpon>PasswordCreatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PerformaceGraphsForm.resx">
       <DependentUpon>PerformaceGraphsForm.cs</DependentUpon>

@@ -72,6 +72,7 @@ namespace Helpful_debuger
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CursorDebugCheckBox
@@ -502,9 +503,9 @@ namespace Helpful_debuger
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(929, 444);
+            this.button13.Location = new System.Drawing.Point(811, 444);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(320, 33);
+            this.button13.Size = new System.Drawing.Size(188, 33);
             this.button13.TabIndex = 49;
             this.button13.Text = "Open Calculator";
             this.button13.UseVisualStyleBackColor = true;
@@ -515,17 +516,29 @@ namespace Helpful_debuger
             this.button11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(615, 444);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(308, 33);
+            this.button11.Size = new System.Drawing.Size(190, 33);
             this.button11.TabIndex = 50;
             this.button11.Text = "Open Output Log";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(1005, 444);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(244, 33);
+            this.button14.TabIndex = 51;
+            this.button14.Text = "Open Password Creator";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 484);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
@@ -621,6 +634,7 @@ namespace Helpful_debuger
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button14;
     }
 }
 
