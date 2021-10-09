@@ -38,7 +38,7 @@ namespace Helpful_debuger
         public int parsedvalue;
         public bool pasuedoutput;
 
-        //lol
+        //Does this github thing work?
         public Form1()
         {
             InitializeComponent();
