@@ -701,5 +701,12 @@ namespace Helpful_debuger
             passwid.Show();
             funcs.AddToOutputCashe("Opened password generator");
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Unblocked hh = new Unblocked();
+            hh.Show();
+            funcs.AddToOutputCashe("Opened Web Browser");
+        }
     }
 }

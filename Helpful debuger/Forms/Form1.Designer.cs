@@ -73,6 +73,7 @@ namespace Helpful_debuger
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CursorDebugCheckBox
@@ -324,9 +325,9 @@ namespace Helpful_debuger
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(276, 444);
+            this.button7.Location = new System.Drawing.Point(12, 444);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(333, 33);
+            this.button7.Size = new System.Drawing.Size(223, 33);
             this.button7.TabIndex = 23;
             this.button7.Text = "Close Helpful Debugger";
             this.button7.UseVisualStyleBackColor = true;
@@ -492,9 +493,9 @@ namespace Helpful_debuger
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(8, 444);
+            this.button12.Location = new System.Drawing.Point(241, 444);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(262, 33);
+            this.button12.Size = new System.Drawing.Size(231, 33);
             this.button12.TabIndex = 48;
             this.button12.Text = "Open Performace Graphs";
             this.button12.UseVisualStyleBackColor = true;
@@ -503,9 +504,9 @@ namespace Helpful_debuger
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(811, 444);
+            this.button13.Location = new System.Drawing.Point(637, 444);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(188, 33);
+            this.button13.Size = new System.Drawing.Size(159, 33);
             this.button13.TabIndex = 49;
             this.button13.Text = "Open Calculator";
             this.button13.UseVisualStyleBackColor = true;
@@ -514,9 +515,9 @@ namespace Helpful_debuger
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(615, 444);
+            this.button11.Location = new System.Drawing.Point(478, 444);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(190, 33);
+            this.button11.Size = new System.Drawing.Size(153, 33);
             this.button11.TabIndex = 50;
             this.button11.Text = "Open Output Log";
             this.button11.UseVisualStyleBackColor = true;
@@ -533,11 +534,23 @@ namespace Helpful_debuger
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // button15
+            // 
+            this.button15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(802, 444);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(197, 33);
+            this.button15.TabIndex = 52;
+            this.button15.Text = "Open Web Browser";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 484);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button13);
@@ -635,6 +648,7 @@ namespace Helpful_debuger
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
     }
 }
 
