@@ -155,7 +155,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="README.md" />
     <None Include="System\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,7 +172,6 @@
   <ItemGroup>
     <Content Include="Resources\HelpfulDebuggerIcon.ico" />
     <Content Include="Resources\Polish_20210906_092445996.ico" />
-    <None Include="LICENSE.md" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

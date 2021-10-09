@@ -38,6 +38,7 @@ namespace Helpful_debuger
         public int parsedvalue;
         public bool pasuedoutput;
 
+        //lol
         public Form1()
         {
             InitializeComponent();
