@@ -134,6 +134,7 @@ namespace Helpful_debugger.Forms
             this.Controls.Add(this.LegthNumberic);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PasswordCreatorForm";
             this.Text = "Helpful Debugger - PasswordCreator";
