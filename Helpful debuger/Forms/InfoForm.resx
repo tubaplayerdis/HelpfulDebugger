@@ -155,6 +155,35 @@ To change the drive that is bieng monitored select an option from the dropdown.
 To change the interval, type a number inbetween 100 - 10000, ever this amount of miliseconds the graphs will update, if your computer is slow and does not respond in time, it will return 0, that is why there is a limit.
 </value>
   </data>
+  <data name="textBox7.Text" xml:space="preserve">
+    <value>To start open the calculator
+
+After that you can use the calculator as a normal calculator, like it should
+
+In the future there might be a system to keep store equations but that is sill bieng developed
+</value>
+  </data>
+  <data name="textBox8.Text" xml:space="preserve">
+    <value>To start open the web browser
+
+If my guess is correct the web browser is built of a really old version of internet explorer, and as such will incounter javascript issues and because of that they have been suppresed
+
+The web browser has basic functonality for the time bieng with only website change with a double click on the navagation bar at the bottom, more will be added soon</value>
+  </data>
+  <data name="textBox9.Text" xml:space="preserve">
+    <value>To start open the password creator
+
+Once you have done that you can choose how many password you want and how long you want them to be as a interger
+
+You can then press generate passwords and then the program will generate the passowrds
+
+
+To start the ouypuy gui press the open ouput button on the main form
+
+Next you can output the log to a text file which name is the current UTC time (Coordinated Universal Time) - not your local time, no my program is not broken
+
+the ouptup system tracks lots of things so if the program chshes youll proboly know why, and if it does look in the cashe folder then open cashe1.txt for the log</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

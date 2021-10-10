@@ -79,8 +79,7 @@ namespace Helpful_debuger
             {
                 if(ErrorBoxYesNo("Slow down buddy, also do you want to see the error"))
                 {
-                    ErrorBoxShow(e.ToString());
-                    MessageBox.Show("l");                   
+                    ErrorBoxShow(e.ToString());                                       
                 }
             }
             

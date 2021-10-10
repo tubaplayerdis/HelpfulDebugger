@@ -43,7 +43,7 @@ namespace Helpful_debugger
             if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data"))
             {
                 folderpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data";
-                string cache = utcDate.ToString("yyyyMMddttmmffff");
+                string cache = utcDate.ToString("yyyy_MM_dd_tt_mm_ffff");
                 
                 filepath = folderpath + @"\Entry" + cache + ".txt";
                 filepath.Replace("/", "_");
