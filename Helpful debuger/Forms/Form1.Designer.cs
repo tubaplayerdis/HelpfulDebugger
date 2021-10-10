@@ -596,7 +596,7 @@ namespace Helpful_debuger
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1276, 523);
             this.Name = "Form1";
-            this.Text = "Helpful Debugger Release 1.0";
+            this.Text = "Helpful Debugger Release 2.0";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();

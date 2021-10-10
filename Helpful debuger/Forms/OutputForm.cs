@@ -120,5 +120,40 @@ namespace Helpful_debugger
         {
             UpdateOutputBoxBool = false;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] folderpath = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\", "Entry*.txt", SearchOption.AllDirectories);
+
+                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"Helpful_Debgger_Data"))
+                {
+                    funcs.InfoBoxShow("The appdata folder does not exist");
+                }
+                else
+                {                    
+                    if (folderpath.Length == 0)
+                    {
+                        funcs.InfoBoxShow("There were no files to delete");
+                    }
+                    else
+                    {
+                        foreach (string filepath in folderpath)
+                        {
+                            File.Delete(filepath);
+                            funcs.AddToOutputCashe($"Delected: {filepath}");
+                        }
+                        funcs.AddToOutputCashe("Cleared Logs");
+                    }
+                }
+            } catch(Exception r)
+            {
+                funcs.ErrorBoxShow($"There was an error: {r}");
+            }
+            
+            
+            
+        }
     }
 }
