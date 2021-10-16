@@ -153,6 +153,13 @@ after that you can select whether you want to run the script with Node.js or Win
 To change the drive that is bieng monitored select an option from the dropdown.
 
 To change the interval, type a number inbetween 100 - 10000, ever this amount of miliseconds the graphs will update, if your computer is slow and does not respond in time, it will return 0, that is why there is a limit.
+
+
+To use the dll injector first select a process
+
+Then you can select your injection method 
+
+Then you can choose your dll file/change proc id if needed
 </value>
   </data>
   <data name="textBox7.Text" xml:space="preserve">
