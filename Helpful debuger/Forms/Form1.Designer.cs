@@ -74,6 +74,8 @@ namespace Helpful_debuger
             this.button11 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CursorDebugCheckBox
@@ -270,9 +272,9 @@ namespace Helpful_debuger
             // Infobutton
             // 
             this.Infobutton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infobutton.Location = new System.Drawing.Point(878, 405);
+            this.Infobutton.Location = new System.Drawing.Point(1255, 44);
             this.Infobutton.Name = "Infobutton";
-            this.Infobutton.Size = new System.Drawing.Size(185, 33);
+            this.Infobutton.Size = new System.Drawing.Size(244, 45);
             this.Infobutton.TabIndex = 18;
             this.Infobutton.Text = "Information";
             this.Infobutton.UseVisualStyleBackColor = true;
@@ -325,9 +327,9 @@ namespace Helpful_debuger
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(12, 444);
+            this.button7.Location = new System.Drawing.Point(878, 405);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(223, 33);
+            this.button7.Size = new System.Drawing.Size(371, 33);
             this.button7.TabIndex = 23;
             this.button7.Text = "Close Helpful Debugger";
             this.button7.UseVisualStyleBackColor = true;
@@ -477,10 +479,10 @@ namespace Helpful_debuger
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(1069, 405);
+            this.button10.Location = new System.Drawing.Point(1255, 401);
             this.button10.MinimumSize = new System.Drawing.Size(179, 33);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(180, 33);
+            this.button10.Size = new System.Drawing.Size(244, 37);
             this.button10.TabIndex = 47;
             this.button10.Text = "Open JS editor";
             this.button10.UseVisualStyleBackColor = true;
@@ -493,9 +495,9 @@ namespace Helpful_debuger
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(241, 444);
+            this.button12.Location = new System.Drawing.Point(1255, 299);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(231, 33);
+            this.button12.Size = new System.Drawing.Size(244, 45);
             this.button12.TabIndex = 48;
             this.button12.Text = "Open Performace Graphs";
             this.button12.UseVisualStyleBackColor = true;
@@ -504,9 +506,9 @@ namespace Helpful_debuger
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(637, 444);
+            this.button13.Location = new System.Drawing.Point(1255, 197);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(159, 33);
+            this.button13.Size = new System.Drawing.Size(244, 45);
             this.button13.TabIndex = 49;
             this.button13.Text = "Open Calculator";
             this.button13.UseVisualStyleBackColor = true;
@@ -515,9 +517,9 @@ namespace Helpful_debuger
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(478, 444);
+            this.button11.Location = new System.Drawing.Point(1255, 248);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(153, 33);
+            this.button11.Size = new System.Drawing.Size(244, 45);
             this.button11.TabIndex = 50;
             this.button11.Text = "Open Output Log";
             this.button11.UseVisualStyleBackColor = true;
@@ -526,9 +528,9 @@ namespace Helpful_debuger
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(1005, 444);
+            this.button14.Location = new System.Drawing.Point(1255, 95);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(244, 33);
+            this.button14.Size = new System.Drawing.Size(244, 45);
             this.button14.TabIndex = 51;
             this.button14.Text = "Open Password Creator";
             this.button14.UseVisualStyleBackColor = true;
@@ -537,19 +539,42 @@ namespace Helpful_debuger
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(802, 444);
+            this.button15.Location = new System.Drawing.Point(1255, 146);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(197, 33);
+            this.button15.Size = new System.Drawing.Size(244, 45);
             this.button15.TabIndex = 52;
             this.button15.Text = "Open Web Browser";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(1255, 350);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(244, 45);
+            this.button16.TabIndex = 53;
+            this.button16.Text = "Open DLL injector";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1251, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 19);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "Other Windows";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 484);
+            this.ClientSize = new System.Drawing.Size(1502, 448);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button11);
@@ -594,7 +619,7 @@ namespace Helpful_debuger
             this.Controls.Add(this.CursorDebugCheckBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1276, 523);
+            this.MinimumSize = new System.Drawing.Size(1276, 487);
             this.Name = "Form1";
             this.Text = "Helpful Debugger Release 2.0";
             this.Activated += new System.EventHandler(this.Form1_Activated);
@@ -649,6 +674,8 @@ namespace Helpful_debuger
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using Helpful_debugger;
 using Helpful_debuger;
 using Helpful_debugger.Forms;
+using System.Security.Principal;
 
 namespace Helpful_debuger
 {
@@ -707,6 +708,48 @@ namespace Helpful_debuger
             Unblocked hh = new Unblocked();
             hh.Show();
             funcs.AddToOutputCashe("Opened Web Browser");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            bool isAdmin;
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+
+                // If is administrator, the variable updates from False to True
+                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            var yes = new ProcessStartInfo();
+            var tokill = Process.GetCurrentProcess();
+            if (isAdmin)
+            {
+                injector idk = new injector();
+                idk.Show();
+            } else
+            {
+                if (funcs.QuestionBoxShow("Helpful debugger does not have admin permissions adn therefor cannot start the Dll Injortor note: this could cause you to lose unsaved work, Restart now?"))
+                {
+                    try
+                    {
+                        yes.UseShellExecute = true;
+                        yes.WorkingDirectory = Environment.CurrentDirectory;
+                        yes.FileName = Application.ExecutablePath;
+                        yes.Verb = "runas";
+                        Process.Start(yes);
+                        tokill.Kill();
+                    }
+                    catch (Exception er)
+                    {
+                        if (funcs.ErrorBoxYesNo("Procces was either denied or there was an error, see error"))
+                        {
+                            funcs.ErrorBoxShow(er.ToString());
+                        }
+                    }
+
+                }
+            }
+               
         }
     }
 }

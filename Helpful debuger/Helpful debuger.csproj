@@ -29,7 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -73,6 +73,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DLLInjector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DLLInjector.designer.cs">
+      <DependentUpon>DLLInjector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DLLInjecotorFiles\FileHandling\DataHolder.cs" />
+    <Compile Include="DLLInjecotorFiles\FileHandling\SaveFile.cs" />
+    <Compile Include="DLLInjecotorFiles\GlobalVars.cs" />
+    <Compile Include="DLLInjecotorFiles\Methods\LoadLibraryEx.cs" />
+    <Compile Include="DLLInjecotorFiles\Methods\ManualMap.cs" />
+    <Compile Include="DLLInjecotorFiles\Methods\NtCreateThreadEx.cs" />
+    <Compile Include="DLLInjecotorFiles\x86Support.cs" />
     <Compile Include="Forms\AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +149,9 @@
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\DLLInjector.resx">
+      <DependentUpon>DLLInjector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,8 +204,13 @@
     <None Include="System\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLLInjecotorFiles\Resources\Right.png" />
+    <Content Include="DLLInjecotorFiles\Resources\Settings.png" />
+    <Content Include="DLLInjecotorFiles\Resources\tick.png" />
+    <Content Include="DLLInjecotorFiles\Resources\Wrong.png" />
     <Content Include="Resources\HelpfulDebuggerIcon.ico" />
     <Content Include="Resources\Polish_20210906_092445996.ico" />
+    <None Include="Resources\Right.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
