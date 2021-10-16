@@ -21,6 +21,7 @@ namespace Helpful_debugger
             
         }
 
+        Vars vars = new Vars();
         Functions funcs = new Functions();
 
         //Variables
@@ -123,6 +124,8 @@ namespace Helpful_debugger
                     File.WriteAllText(jsfilepath, EditScriptBox.Text.ToString());
                     MessageBox.Show("File was saved", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Saved = true;
+                    vars.SetSaved(true);
+                    Filesavedbox.Checked = vars.GetSaved();
                     funcs.AddToOutputCashe("saved Js file");
                 }
                 else
@@ -182,6 +185,9 @@ namespace Helpful_debugger
         private void EditScriptBox_TextChanged(object sender, EventArgs e)
         {
             Saved = false;
+            vars.SetSaved(false);
+            Filesavedbox.Checked = vars.GetSaved();
+            
         }
 
         private void EditorForm_Activated(object sender, EventArgs e)

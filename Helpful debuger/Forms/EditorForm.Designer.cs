@@ -40,6 +40,7 @@ namespace Helpful_debugger
             this.button4 = new System.Windows.Forms.Button();
             this.OpenJSfile = new System.Windows.Forms.OpenFileDialog();
             this.button5 = new System.Windows.Forms.Button();
+            this.Filesavedbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label6
@@ -54,10 +55,10 @@ namespace Helpful_debugger
             // 
             // FileOpenCurrently
             // 
-            this.FileOpenCurrently.Location = new System.Drawing.Point(149, 12);
+            this.FileOpenCurrently.Location = new System.Drawing.Point(149, 13);
             this.FileOpenCurrently.Name = "FileOpenCurrently";
             this.FileOpenCurrently.ReadOnly = true;
-            this.FileOpenCurrently.Size = new System.Drawing.Size(901, 20);
+            this.FileOpenCurrently.Size = new System.Drawing.Size(836, 20);
             this.FileOpenCurrently.TabIndex = 42;
             this.FileOpenCurrently.Text = "Current file open:";
             // 
@@ -142,11 +143,23 @@ namespace Helpful_debugger
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // Filesavedbox
+            // 
+            this.Filesavedbox.AutoCheck = false;
+            this.Filesavedbox.AutoSize = true;
+            this.Filesavedbox.Location = new System.Drawing.Point(991, 15);
+            this.Filesavedbox.Name = "Filesavedbox";
+            this.Filesavedbox.Size = new System.Drawing.Size(63, 17);
+            this.Filesavedbox.TabIndex = 46;
+            this.Filesavedbox.Text = "Saved?";
+            this.Filesavedbox.UseVisualStyleBackColor = true;
+            // 
             // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 697);
+            this.Controls.Add(this.Filesavedbox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.RunScriptBTWSH);
             this.Controls.Add(this.EditScriptBox);
@@ -179,5 +192,6 @@ namespace Helpful_debugger
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.OpenFileDialog OpenJSfile;
         private System.Windows.Forms.Button button5;
+        public System.Windows.Forms.CheckBox Filesavedbox;
     }
 }

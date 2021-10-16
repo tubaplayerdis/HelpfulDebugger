@@ -116,8 +116,19 @@ namespace Helpful_debuger
     
     public class Vars
     {
-       
+        bool Saved;
         string AppDataFolder;
+
+        public void SetSaved(bool saved)
+        {
+            Saved = saved;
+        }
+
+        public bool GetSaved()
+        {
+            
+            return Saved;
+        }
         
         public void CreateAppDataFolder()
         {
