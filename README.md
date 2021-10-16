@@ -9,3 +9,4 @@ NOTES
 - You need to compile yourself for latest version otherwise build will be in releases
 - if compiling by yourself make sure to install Newtonsoft.json with nu get - that might be pre installed
 - Windows only
+- DLL made with code from triggerhex
