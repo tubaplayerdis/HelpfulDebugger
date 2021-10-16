@@ -7,5 +7,5 @@ NOTES
 - Dont change anything unless you know what your doing
 - This program is in early development I will update it when I have time
 - You need to compile yourself for latest version otherwise build will be in releases
-- if compiling by yourself make sure to install Newtonsoft.json with nu get
+- if compiling by yourself make sure to install Newtonsoft.json with nu get - that might be pre installed
 - Windows only
