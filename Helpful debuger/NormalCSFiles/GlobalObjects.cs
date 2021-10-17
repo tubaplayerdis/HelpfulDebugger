@@ -22,9 +22,7 @@ namespace Helpful_debuger
     
     public class Calculator
     {
-        Functions funcs = new Functions();
-        bool CasheFolderExists;
-        bool CasheFileExists;
+        Functions funcs = new Functions();       
         string PrePathToSecondCahse = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe";
         string PathToSecondCashe = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\cashe2.txt";
         DateTime utcDate = DateTime.UtcNow;
@@ -44,24 +42,23 @@ namespace Helpful_debuger
         {
             if(Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe"))
             {
-                CasheFolderExists = true;
+                
                 if(File.Exists(PrePathToSecondCahse + @"\cashe2.txt"))
                 {
-                    CasheFileExists = true;                   
+                                      
                     funcs.AddToOutputCashe("The cahse file already existed therfor did not create a new one");
                 }
                 else
                 {
                     File.Create(PrePathToSecondCahse + @"\cashe2.txt");                    
-                    CasheFileExists = true;
+                    
                     funcs.AddToOutputCashe("Created new chashe document for calculator");
                 }
             }
             else
             {
                 funcs.AddToOutputCashe("Did not create the second cashe file as there was no appdata folder, calculator history will be disabled - restart application");
-                CasheFileExists = false;
-                CasheFolderExists = false;
+                
             }
         }
         public void DeleteCashe()

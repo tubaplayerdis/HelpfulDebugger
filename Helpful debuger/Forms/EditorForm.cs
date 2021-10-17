@@ -27,9 +27,8 @@ namespace Helpful_debugger
         //Variables
         string jsfilepath;
         string nl = "\r\n";
-        string qu = "\"";
-        bool Editing = false;
-        bool Saved = false;
+        
+       
 
 
         public void TryToRunFile()
@@ -80,13 +79,14 @@ namespace Helpful_debugger
                     MessageBox.Show("Node.js is not installed", "Instalation checker", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                funcs.AddToOutputCashe("Checked for Node.js installation");
+                
             }
             else
             {
                 MessageBox.Show("Operation not completed", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
         }
 
 
@@ -122,8 +122,7 @@ namespace Helpful_debugger
                 if (MessageBox.Show("Please confirm before saving" + "\n" + "Do you want to save ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     File.WriteAllText(jsfilepath, EditScriptBox.Text.ToString());
-                    MessageBox.Show("File was saved", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Saved = true;
+                    MessageBox.Show("File was saved", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
                     vars.SetSaved(true);
                     Filesavedbox.Checked = vars.GetSaved();
                     funcs.AddToOutputCashe("saved Js file");
@@ -152,8 +151,7 @@ namespace Helpful_debugger
                     jsfilepath = filepathofJS;
                     string contentsoffile = File.ReadAllText(filepathofJS);
                     EditScriptBox.Text = contentsoffile;
-                    FileOpenCurrently.Text = "Current file open: " + jsfilepath;
-                    Saved = false;
+                    FileOpenCurrently.Text = "Current file open: " + jsfilepath;                   
 
 
                 }
@@ -184,7 +182,7 @@ namespace Helpful_debugger
 
         private void EditScriptBox_TextChanged(object sender, EventArgs e)
         {
-            Saved = false;
+            
             vars.SetSaved(false);
             Filesavedbox.Checked = vars.GetSaved();
             
