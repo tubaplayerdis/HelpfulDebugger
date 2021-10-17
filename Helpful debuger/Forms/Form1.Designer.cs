@@ -76,6 +76,7 @@ namespace Helpful_debuger
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CursorDebugCheckBox
@@ -272,9 +273,9 @@ namespace Helpful_debuger
             // Infobutton
             // 
             this.Infobutton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infobutton.Location = new System.Drawing.Point(1255, 44);
+            this.Infobutton.Location = new System.Drawing.Point(874, 405);
             this.Infobutton.Name = "Infobutton";
-            this.Infobutton.Size = new System.Drawing.Size(244, 45);
+            this.Infobutton.Size = new System.Drawing.Size(375, 33);
             this.Infobutton.TabIndex = 18;
             this.Infobutton.Text = "Information";
             this.Infobutton.UseVisualStyleBackColor = true;
@@ -327,9 +328,9 @@ namespace Helpful_debuger
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(878, 405);
+            this.button7.Location = new System.Drawing.Point(12, 444);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(371, 33);
+            this.button7.Size = new System.Drawing.Size(1487, 33);
             this.button7.TabIndex = 23;
             this.button7.Text = "Close Helpful Debugger";
             this.button7.UseVisualStyleBackColor = true;
@@ -568,11 +569,23 @@ namespace Helpful_debuger
             this.label6.TabIndex = 54;
             this.label6.Text = "Other Windows";
             // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(1255, 44);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(244, 45);
+            this.button17.TabIndex = 55;
+            this.button17.Text = "Open Calculator History";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1502, 448);
+            this.ClientSize = new System.Drawing.Size(1502, 483);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
@@ -676,6 +689,7 @@ namespace Helpful_debuger
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button17;
     }
 }
 

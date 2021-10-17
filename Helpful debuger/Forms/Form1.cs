@@ -753,5 +753,12 @@ namespace Helpful_debuger
             }
                
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            CalcHistoryform c = new CalcHistoryform();
+            c.Show();
+            funcs.AddToOutputCashe("Started calc history form");
+        }
     }
 }

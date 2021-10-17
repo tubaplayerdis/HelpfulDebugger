@@ -64,6 +64,7 @@ namespace Helpful_debugger.Forms
             this.Calchistorybox.Multiline = true;
             this.Calchistorybox.Name = "Calchistorybox";
             this.Calchistorybox.ReadOnly = true;
+            this.Calchistorybox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Calchistorybox.Size = new System.Drawing.Size(776, 473);
             this.Calchistorybox.TabIndex = 5;
             // 

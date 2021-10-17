@@ -29,7 +29,9 @@ namespace Helpful_debugger
 
         private void button_click(object sender, EventArgs e)
         {
+            Button buttont = (Button)sender;
             funcs.AddToOutputCashe(sender.ToString());
+            cashe += buttont.Text + " ";
             if ((textBox_Result.Text == "0") || (isOperationPerformed))
                 textBox_Result.Clear();
 
@@ -57,6 +59,7 @@ namespace Helpful_debugger
                 operationPerformed = button.Text;
                 labelCurrentOperation.Text = resultValue + " " + operationPerformed;
                 isOperationPerformed = true;
+                cashe += button.Text + " ";
             }
             else
             {
@@ -65,6 +68,7 @@ namespace Helpful_debugger
                 resultValue = Double.Parse(textBox_Result.Text);
                 labelCurrentOperation.Text = resultValue + " " + operationPerformed;
                 isOperationPerformed = true;
+                cashe += button.Text + " ";
             }
         }
 
@@ -85,15 +89,23 @@ namespace Helpful_debugger
             {
                 case "+":
                     textBox_Result.Text = (resultValue + Double.Parse(textBox_Result.Text)).ToString();
+                    calcs.WriteToCashe($"{cashe} = {textBox_Result.Text}");
+                    cashe = "";
                     break;
                 case "-":
                     textBox_Result.Text = (resultValue - Double.Parse(textBox_Result.Text)).ToString();
+                    calcs.WriteToCashe($"{cashe} = {textBox_Result.Text}");
+                    cashe = "";
                     break;
                 case "*":
                     textBox_Result.Text = (resultValue * Double.Parse(textBox_Result.Text)).ToString();
+                    calcs.WriteToCashe($"{cashe} = {textBox_Result.Text}");
+                    cashe = "";
                     break;
                 case "/":
                     textBox_Result.Text = (resultValue / Double.Parse(textBox_Result.Text)).ToString();
+                    calcs.WriteToCashe($"{cashe} = {textBox_Result.Text}");
+                    cashe = "";
                     break;
                 default:
                     break;

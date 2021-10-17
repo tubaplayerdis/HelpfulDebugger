@@ -34,7 +34,6 @@ namespace Helpful_debugger
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -97,23 +96,12 @@ namespace Helpful_debugger
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.operator_click);
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(226, 73);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 45);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "CE";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(226, 124);
+            this.button5.Location = new System.Drawing.Point(226, 73);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 45);
+            this.button5.Size = new System.Drawing.Size(53, 96);
             this.button5.TabIndex = 9;
             this.button5.Text = "C";
             this.button5.UseVisualStyleBackColor = true;
@@ -304,7 +292,6 @@ namespace Helpful_debugger
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -327,7 +314,6 @@ namespace Helpful_debugger
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
