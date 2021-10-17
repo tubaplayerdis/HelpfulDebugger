@@ -32,6 +32,7 @@ namespace Helpful_debuger
 
 
         Functions funcs = new Functions();
+        Calculator calcs = new Calculator();
 
         public const int MOUSEEVENTF_LEFTDOWN = 0x02;
         public const int MOUSEEVENTF_LEFTUP = 0x04;
@@ -53,6 +54,7 @@ namespace Helpful_debuger
             vars.CreateAppDataFolder();
             vars.CreateCahseFolderAndDocument();
             funcs.ClearOutputCashe();
+            calcs.CreateCasheDocument();
             funcs.AddToOutputCashe("Form1.cs has started");
             
 

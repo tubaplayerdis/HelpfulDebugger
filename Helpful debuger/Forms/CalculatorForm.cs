@@ -18,11 +18,13 @@ namespace Helpful_debugger
         string cashe = "";
         bool isOperationPerformed = false;
         Functions funcs = new Functions();
+        Calculator calcs = new Calculator();
         
         public CalculatorForm()
         {
             InitializeComponent();
             funcs.AddToOutputCashe("CalculatorForm.cs has started");
+            
         }
 
         private void button_click(object sender, EventArgs e)

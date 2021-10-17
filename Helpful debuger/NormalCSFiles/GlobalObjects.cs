@@ -19,23 +19,124 @@ using Helpful_debugger;
 
 namespace Helpful_debuger
 {
+    
     public class Calculator
     {
+        Functions funcs = new Functions();
+        Boolean CasheFolderExists;
+        Boolean CasheFileExists;
+        string PrePathToSecondCahse = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe";
+        string PathToSecondCashe;
+        DateTime utcDate = DateTime.UtcNow;
+        private bool DoesDocumentExist()
+        {
+            if (File.Exists(PathToSecondCashe))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void CreateCasheDocument()
         {
-
+            if(Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe"))
+            {
+                CasheFolderExists = true;
+                if(File.Exists(PrePathToSecondCahse + @"\cashe2.txt"))
+                {
+                    CasheFileExists = true;
+                    PathToSecondCashe = PrePathToSecondCahse + @"\cashe2.txt";
+                    funcs.AddToOutputCashe("The cahse file already existed therfor did not create a new one");
+                }
+                else
+                {
+                    File.Create(PrePathToSecondCahse + @"\cashe2.txt");
+                    PathToSecondCashe = PrePathToSecondCahse + @"\cashe2.txt";
+                    CasheFileExists = true;
+                    funcs.AddToOutputCashe("Created new chashe document ofr calculator");
+                }
+            }
+            else
+            {
+                funcs.AddToOutputCashe("Did not create the second cashe file as there was no appdata folder, calculator history will be disabled");
+                CasheFileExists = false;
+                CasheFolderExists = false;
+            }
         }
         public void DeleteCashe()
         {
+            if (File.Exists(PathToSecondCashe))
+            {
+                File.Delete(PathToSecondCashe);
+                funcs.AddToOutputCashe("Deleted the calculator history");
+            }
+            else
+            {
+                funcs.AddToOutputCashe("There was no file to delete and therofor did not delete the second cahse");
+            }
 
         }
         public void WriteToCashe(string WhatToAdd)
         {
-
+            string Time = utcDate.ToString("yyyy_MM_dd_tt_mm_ffff");
+            if (CasheFolderExists == false || CasheFileExists == false)
+            {
+                funcs.AddToOutputCashe("Did not write to second cashe as the files do not exist");
+            }
+            else
+            {
+                if (DoesDocumentExist())
+                {
+                    try
+                    {
+                        File.AppendAllText(PathToSecondCashe, $"{Time} \r\n\r\n {WhatToAdd}");
+                        funcs.AddToOutputCashe("Added to second cahse file");
+                    }
+                    catch (Exception e)
+                    {
+                        funcs.AddToOutputCashe(e.ToString());
+                    }
+                }
+                else
+                {
+                    funcs.AddToOutputCashe("The document did not exist and therefor did not write to it");
+                }
+                
+            }
         }
         public string ReadCashe()
         {
-            return "lol";
+            string data = File.ReadAllText(PathToSecondCashe);
+            if (CasheFolderExists == false || CasheFileExists == false)
+            {
+                funcs.AddToOutputCashe("Did not read as the file did not exist by boolean");
+                return "Did not read as the file did not exist by boolean";
+            }
+            else
+            {
+                if (DoesDocumentExist())
+                {
+                    try
+                    {
+                        return data;
+                    }
+                    catch (Exception)
+                    {
+                        funcs.AddToOutputCashe("Failed to read the cahse2 file this is most likey because it does not exist");
+                        return "Failed to read the cahse2 file this is most likey because it does not exist";
+                    }
+                }
+                else
+                {
+                    funcs.AddToOutputCashe("The document cahse2 did not exist therefor it was not written to");
+                    return "The document cahse2 did not exist therefor it was not written to";
+                }
+                
+                
+            }
         }
     }
     public class Functions
