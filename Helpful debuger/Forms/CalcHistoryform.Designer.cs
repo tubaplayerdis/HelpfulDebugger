@@ -56,6 +56,7 @@ namespace Helpful_debugger.Forms
             this.button1.TabIndex = 4;
             this.button1.Text = "Delete Calculator History";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Calchistorybox
             // 
@@ -81,6 +82,7 @@ namespace Helpful_debugger.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalcHistoryform";
             this.Text = "Helpful Debugger - Calculator History";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalcHistoryform_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

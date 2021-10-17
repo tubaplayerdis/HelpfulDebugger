@@ -14,9 +14,12 @@ namespace Helpful_debugger.Forms
     public partial class CalcHistoryform : Form
     {
         Calculator calc = new Calculator();
+        bool UpdateBox;
         public CalcHistoryform()
         {
             InitializeComponent();
+            UpdateCalcHistoryBox.RunWorkerAsync();
+            UpdateBox = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -24,14 +27,27 @@ namespace Helpful_debugger.Forms
             this.Close();
         }
 
-        public void MakeTheSlaveWork()
-        {
-            UpdateCalcHistoryBox.RunWorkerAsync();
-        }
+        
 
         private void UpdateCalcHistoryBox_DoWork(object sender, DoWorkEventArgs e)
         {
-            Calchistorybox.Text = calc.ReadCashe();
+            do
+            {
+                Calchistorybox.Text = calc.ReadCashe();
+                System.Threading.Thread.Sleep(10);
+            } while (UpdateBox == true);
+
+            
+        }
+
+        private void CalcHistoryform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UpdateBox = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            calc.DeleteCashe();
         }
     }
 }
