@@ -33,12 +33,14 @@ namespace Helpful_debuger
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
+            this.comboProcess = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboId = new System.Windows.Forms.ComboBox();
             this.bInject = new System.Windows.Forms.Button();
             this.bSearchDll = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textDll = new System.Windows.Forms.TextBox();
+            this.picProcess = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboMethod = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,14 +61,12 @@ namespace Helpful_debuger
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.l_closeOnInject = new System.Windows.Forms.Label();
-            this.picProcess = new System.Windows.Forms.PictureBox();
-            this.comboProcess = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tabMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProcess)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabOptions.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProcess)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -102,6 +102,16 @@ namespace Helpful_debuger
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "1";
             this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // comboProcess
+            // 
+            this.comboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboProcess.FormattingEnabled = true;
+            this.comboProcess.Location = new System.Drawing.Point(42, 108);
+            this.comboProcess.Name = "comboProcess";
+            this.comboProcess.Size = new System.Drawing.Size(165, 21);
+            this.comboProcess.TabIndex = 18;
+            this.comboProcess.DropDown += new System.EventHandler(this.ComboProcess_DropDown);
             // 
             // label4
             // 
@@ -139,6 +149,7 @@ namespace Helpful_debuger
             // 
             // bSearchDll
             // 
+            this.bSearchDll.ForeColor = System.Drawing.Color.Black;
             this.bSearchDll.Location = new System.Drawing.Point(142, 215);
             this.bSearchDll.Name = "bSearchDll";
             this.bSearchDll.Size = new System.Drawing.Size(65, 23);
@@ -166,6 +177,15 @@ namespace Helpful_debuger
             this.textDll.Name = "textDll";
             this.textDll.Size = new System.Drawing.Size(165, 20);
             this.textDll.TabIndex = 10;
+            // 
+            // picProcess
+            // 
+            this.picProcess.Image = global::Helpful_debugger.Properties.Resources.Wrong;
+            this.picProcess.Location = new System.Drawing.Point(219, 86);
+            this.picProcess.Name = "picProcess";
+            this.picProcess.Size = new System.Drawing.Size(19, 19);
+            this.picProcess.TabIndex = 9;
+            this.picProcess.TabStop = false;
             // 
             // label2
             // 
@@ -431,25 +451,6 @@ namespace Helpful_debuger
             this.l_closeOnInject.TabIndex = 10;
             this.l_closeOnInject.Text = "Close on inject:";
             // 
-            // picProcess
-            // 
-            this.picProcess.Image = global::Helpful_debugger.Properties.Resources.Wrong;
-            this.picProcess.Location = new System.Drawing.Point(219, 86);
-            this.picProcess.Name = "picProcess";
-            this.picProcess.Size = new System.Drawing.Size(19, 19);
-            this.picProcess.TabIndex = 9;
-            this.picProcess.TabStop = false;
-            // 
-            // comboProcess
-            // 
-            this.comboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboProcess.FormattingEnabled = true;
-            this.comboProcess.Location = new System.Drawing.Point(42, 108);
-            this.comboProcess.Name = "comboProcess";
-            this.comboProcess.Size = new System.Drawing.Size(165, 21);
-            this.comboProcess.TabIndex = 18;
-            this.comboProcess.DropDown += new System.EventHandler(this.ComboProcess_DropDown);
-            // 
             // injector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,11 +465,11 @@ namespace Helpful_debuger
             this.tabControl.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.tabMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProcess)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tabOptions.ResumeLayout(false);
             this.tabOptions.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picProcess)).EndInit();
             this.ResumeLayout(false);
 
         }
