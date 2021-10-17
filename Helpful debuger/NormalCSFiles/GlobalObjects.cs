@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Helpful_debugger;
+using Helpful_debuger;
 
 
 
@@ -22,7 +23,8 @@ namespace Helpful_debuger
     
     public class Calculator
     {
-        Functions funcs = new Functions();       
+        Functions funcs = new Functions();    
+        
         string PrePathToSecondCahse = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe";
         string PathToSecondCashe = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\cashe2.txt";
         DateTime utcDate = DateTime.UtcNow;
@@ -67,7 +69,7 @@ namespace Helpful_debuger
             {
                 File.Delete(PathToSecondCashe);
                 funcs.AddToOutputCashe("Deleted the calculator history and made new file");
-                CreateCasheDocument();
+                CreateCasheDocument();                
             }
             else
             {
@@ -99,6 +101,7 @@ namespace Helpful_debuger
                 
             
         }
+        
         public string ReadCashe()
         {
             

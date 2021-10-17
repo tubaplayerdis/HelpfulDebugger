@@ -70,6 +70,7 @@ namespace Helpful_debugger.Forms
             // 
             // UpdateCalcHistoryBox
             // 
+            this.UpdateCalcHistoryBox.WorkerSupportsCancellation = true;
             this.UpdateCalcHistoryBox.DoWork += new System.ComponentModel.DoWorkEventHandler(this.UpdateCalcHistoryBox_DoWork);
             // 
             // CalcHistoryform
@@ -94,6 +95,6 @@ namespace Helpful_debugger.Forms
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Calchistorybox;
-        private System.ComponentModel.BackgroundWorker UpdateCalcHistoryBox;
+        public System.ComponentModel.BackgroundWorker UpdateCalcHistoryBox;
     }
 }
