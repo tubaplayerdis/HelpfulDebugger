@@ -11,10 +11,12 @@ using Helpful_debuger;
 
 namespace Helpful_debugger.Forms
 {
+    
     public partial class CalcHistoryform : Form
     {
         Calculator calc = new Calculator();
         bool dowork;
+        Functions funcs = new Functions();
         public CalcHistoryform()
         {
             InitializeComponent();
@@ -25,6 +27,10 @@ namespace Helpful_debugger.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+            dowork = false;
+            System.Threading.Thread.Sleep(10);
+            UpdateCalcHistoryBox.CancelAsync();
             this.Close();
         }
 
@@ -34,7 +40,13 @@ namespace Helpful_debugger.Forms
         {
             do
             {
-                Calchistorybox.Text = calc.ReadCashe();
+                try
+                {
+                    Calchistorybox.Text = calc.ReadCashe();
+                } catch(Exception)
+                {
+                    funcs.AddToOutputCashe("Error creating window handle for calc his");
+                }                
                 System.Threading.Thread.Sleep(10);
             } while (dowork == true);
            
@@ -52,6 +64,7 @@ namespace Helpful_debugger.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             calc.DeleteCashe();
+
         }
     }
 }

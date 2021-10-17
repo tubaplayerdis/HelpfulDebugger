@@ -17,19 +17,18 @@ using Helpful_debugger;
 using Helpful_debuger;
 
 
-
 namespace Helpful_debuger
 {
     
     public class Calculator
     {
-        Functions funcs = new Functions();    
-        
+        Functions funcs = new Functions();
         string PrePathToSecondCahse = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe";
         string PathToSecondCashe = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\cashe2.txt";
         DateTime utcDate = DateTime.UtcNow;
         private bool DoesDocumentExist()
         {
+            
             if (File.Exists(PathToSecondCashe))
             {
                 return true;
@@ -82,56 +81,55 @@ namespace Helpful_debuger
         {
             string Time = utcDate.ToString("yyyy_MM_dd_tt_mm_ffff");
             
-                if (DoesDocumentExist())
+            if (DoesDocumentExist())
+            {
+                try
                 {
-                    try
-                    {
-                        File.AppendAllText(PathToSecondCashe, $"\r\n\r\n --------------------------------------------------------- \r\n {Time} \r\n\r\n {WhatToAdd} \r\n ---------------------------------------------------------");
-                        funcs.AddToOutputCashe("Added to second cashe file");
-                    }
-                    catch (Exception e)
-                    {
-                        funcs.AddToOutputCashe(e.ToString());
-                    }
+                    File.AppendAllText(PathToSecondCashe, $"\r\n\r\n --------------------------------------------------------- \r\n {Time} \r\n\r\n {WhatToAdd} \r\n ---------------------------------------------------------");
+                    funcs.AddToOutputCashe("Added to second cashe file");
                 }
-                else
+                catch (Exception e)
                 {
-                    funcs.AddToOutputCashe("The document did not exist and therefor did not write to it - restart application");
+                    funcs.AddToOutputCashe(e.ToString());
                 }
+            }
+            else
+            {
+                funcs.AddToOutputCashe("The document did not exist and therefor did not write to it - restart application");
+            }
                 
             
         }
         
         public string ReadCashe()
         {
-            
-            
-                if (DoesDocumentExist())
+            if (DoesDocumentExist())
+            {
+                try
                 {
-                    try
-                    {
-                        string data = File.ReadAllText(PathToSecondCashe);
-                        return data;
-                    }
-                    catch (Exception)
-                    {
-                        funcs.AddToOutputCashe("Failed to read the cahse2 file this is most likey because it does not exist - this happens after clearing the cashe");
-                        return "Failed to read the cashe2 file this is most likey because it does not exist -  this happens after clearing the cashe";
-                    }
+                    string data = File.ReadAllText(PathToSecondCashe);
+                    return data;
+                        
                 }
-                else
+                catch (Exception)
                 {
-                    funcs.AddToOutputCashe("The document cahse2 did not exist therefor it was not written to - restart application");
-                    return "The document cashe2 did not exist therefor it was not written to";
+                    funcs.AddToOutputCashe("Failed to read the cahse2 file this is most likey because it does not exist - this happens after clearing the cashe");
+                    return "Failed to read the cashe2 file this is most likey because it does not exist -  this happens after clearing the cashe";
                 }
-                
-               
-            
+            }
+            else
+            {
+                funcs.AddToOutputCashe("The document cahse2 did not exist therefor it was not written to - restart application");
+                return "The document cashe2 did not exist therefor it was not written to";
+            }          
         }
+
+        
     }
     public class Functions
     {
-        Vars vars = new Vars(); 
+        Vars vars = new Vars();
+        string cahsefile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\chache1.txt";
 
         public void ErrorBoxShow(string Message)
         {
@@ -177,8 +175,8 @@ namespace Helpful_debuger
                 return false;
             }
         }
-
-        string cahsefile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\chache1.txt";
+        
+        
 
         public void AddToOutputCashe(string content)
         {
