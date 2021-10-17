@@ -115,8 +115,8 @@ namespace Helpful_debuger
                     }
                     catch (Exception)
                     {
-                        funcs.AddToOutputCashe("Failed to read the cahse2 file this is most likey because it does not exist - restart application");
-                        return "Failed to read the cashe2 file this is most likey because it does not exist";
+                        funcs.AddToOutputCashe("Failed to read the cahse2 file this is most likey because it does not exist - this happens after clearing the cashe");
+                        return "Failed to read the cashe2 file this is most likey because it does not exist -  this happens after clearing the cashe";
                     }
                 }
                 else

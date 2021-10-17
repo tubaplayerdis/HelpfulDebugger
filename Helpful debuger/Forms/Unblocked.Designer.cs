@@ -41,7 +41,7 @@ namespace Helpful_debugger.Forms
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1904, 1041);
+            this.webBrowser1.Size = new System.Drawing.Size(1904, 1047);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("https://google.com", System.UriKind.Absolute);
             // 
@@ -49,7 +49,7 @@ namespace Helpful_debugger.Forms
             // 
             this.textBox1.Location = new System.Drawing.Point(0, 1021);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1904, 20);
+            this.textBox1.Size = new System.Drawing.Size(1904, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             this.textBox1.DoubleClick += new System.EventHandler(this.textBox1_DoubleClick);
