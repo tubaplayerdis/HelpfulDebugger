@@ -44,6 +44,7 @@ namespace Helpful_debugger.Forms
                 }
                 else
                 {
+                    Passwords = "Passwords: \r\n\r\n";
                     for (int i = 0; i < NumberOFNumberic.Value; i++)
                     {
                         Passwords += GeneratePassword(((int)LegthNumberic.Value));
