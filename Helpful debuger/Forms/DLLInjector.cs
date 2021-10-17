@@ -28,8 +28,7 @@ namespace Helpful_debuger
 
             SaveFile.loadFile();
 
-            if (DataHolder.injectOnStartup)
-                l_closeOnInject.ForeColor = ColorTranslator.FromHtml(GlobalVars.colorBlocked);
+            
 
             comboProcess.Text = DataHolder.savedProcess;
             this.textDll.Text = DataHolder.savedDllPath;
@@ -143,11 +142,7 @@ namespace Helpful_debuger
                 if (bmpProc.GetPixel(8, 8) != bmpOrigin.GetPixel(8, 8)) // Check ob beide Pixel same sind
                     updateComboId();
 
-                if ((boxInjectOnStartup.Image != null) && exist && !GlobalVars.autoInject && !String.IsNullOrEmpty(textDll.Text))
-                {
-                    bInject.PerformClick();
-                    GlobalVars.autoInject = true;
-                }
+                
 
 
             }
@@ -158,23 +153,7 @@ namespace Helpful_debuger
 
         #region tabMethods
 
-        private void bOptions_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectedIndex = 1;
-            boxCloseOnInject.Image = (DataHolder.closeOnInjection) ? Helpful_debugger.Properties.Resources.tick : null;
-            boxInjectOnStartup.Image = (DataHolder.injectOnStartup) ? Helpful_debugger.Properties.Resources.tick : null;
-
-
-            if (DataHolder.injectOnStartup)
-                l_closeOnInject.ForeColor = ColorTranslator.FromHtml(GlobalVars.colorBlocked);
-            else
-                l_closeOnInject.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-        }
-
-        private void bMenu_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectedIndex = 0;
-        }
+       
 
         #endregion tabMethods
 
@@ -192,24 +171,30 @@ namespace Helpful_debuger
 
         private void bInject_Click(object sender, EventArgs e)
         {
-            if (GlobalVars.inject)
-                return;
+            
 
             Bitmap bmpProc = new Bitmap(picProcess.Image);
             Bitmap bmpRight = new Bitmap(Helpful_debugger.Properties.Resources.Right);
-            if (bmpProc.GetPixel(8, 8) != bmpRight.GetPixel(8, 8)) // Check ob beide Pixel same sind
+            if (bmpProc.GetPixel(8, 8) != bmpRight.GetPixel(8, 8))// Check ob beide Pixel same sind
+            {                
+                funcs.AddToOutputCashe("got to pixel bullshit");
                 return;
-
+            }
             if (!File.Exists(textDll.Text))
                 return;
 
             IntPtr hProcess = Imports.OpenProcess(0x1F0FFF, true, Int32.Parse(comboId.Text));
             if (hProcess == (IntPtr)null)
+            {
+                funcs.AddToOutputCashe("got to openprocess");
                 return;
+            }
+                
 
             if (x86Support.cpuEquals(hProcess, textDll.Text))
             {
                 Imports.kernelErrMsg("Your Dll isn't compatible with the target process");
+                funcs.AddToOutputCashe("DLL wasnot compatible");
                 return;
             }
 
@@ -217,7 +202,11 @@ namespace Helpful_debuger
             Imports.IsWow64Process(hProcess, ref bIsWow32);
             IntPtr loadLibAddy = IntPtr.Zero;
             if (bIsWow32)
+            {
                 loadLibAddy = x86Support.GetLoadLibAddy32();
+                funcs.AddToOutputCashe("you fucked up");
+            }
+               
 
             
 
@@ -235,16 +224,15 @@ namespace Helpful_debuger
 
             }
 
-            if (DataHolder.closeOnInjection && !DataHolder.injectOnStartup)
-                Process.GetCurrentProcess().Kill();
+            
 
             if (GlobalVars.inject)
             {
                 bInject.ForeColor = ColorTranslator.FromHtml(GlobalVars.colorBlocked);
                 bInject.Enabled = false;
             }
-                
 
+            
         }
 
         #endregion Dll
@@ -259,14 +247,7 @@ namespace Helpful_debuger
             SaveFile.saveFile();
         }
 
-        private void bSave_Click(object sender, EventArgs e)
-        {
-            DataHolder.injectOnStartup = (boxInjectOnStartup.Image != null) ? true : false;
-            DataHolder.closeOnInjection = (boxCloseOnInject.Image != null) ? true : false;
-            SaveFile.saveFile();
-            tabControl.SelectedIndex = 0;
-
-        }
+        
 
         private void closeProcess_Click(object sender, EventArgs e)
         {
@@ -305,27 +286,7 @@ namespace Helpful_debuger
 
         #region buttonCheckbox
 
-        private void boxCloseOnInject_Click(object sender, EventArgs e)
-        {
-            if (boxCloseOnInject.Image == null)
-                boxCloseOnInject.Image = Helpful_debugger.Properties.Resources.tick;
-            else
-                boxCloseOnInject.Image = null;
-        }
-
-        private void boxInjectOnStartup_Click(object sender, EventArgs e)
-        {
-            if (boxInjectOnStartup.Image == null)
-            {
-                boxInjectOnStartup.Image = Helpful_debugger.Properties.Resources.tick;
-                l_closeOnInject.ForeColor = ColorTranslator.FromHtml(GlobalVars.colorBlocked);
-            }
-            else
-            {
-                boxInjectOnStartup.Image = null;
-                l_closeOnInject.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-            }
-        }
+       
 
         #endregion buttonCheckbox
 

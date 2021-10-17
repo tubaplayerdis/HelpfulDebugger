@@ -81,7 +81,9 @@ namespace Helpful_debugger.Forms
             this.Controls.Add(this.Calchistorybox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(816, 612);
             this.Name = "CalcHistoryform";
             this.Text = "Helpful Debugger - Calculator History";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalcHistoryform_FormClosing);
