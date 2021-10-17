@@ -15,6 +15,7 @@ namespace Helpful_debugger
     {
         Double resultValue = 0;
         String operationPerformed = "";
+        string cashe = "";
         bool isOperationPerformed = false;
         Functions funcs = new Functions();
         

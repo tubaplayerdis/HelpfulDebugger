@@ -10,10 +10,11 @@ namespace Helpful_debuger
 {
     public partial class injector : Form
     {
-
+        Functions funcs = new Functions();
         public injector()
         {
             InitializeComponent();
+            funcs.AddToOutputCashe("started DLL injector");
         }
 
         private void injector_Load(object sender, EventArgs e)
@@ -218,16 +219,18 @@ namespace Helpful_debuger
             if (bIsWow32)
                 loadLibAddy = x86Support.GetLoadLibAddy32();
 
-
+            
 
 
             switch (comboMethod.Text)
             {
                 case "LoadLibraryEx":
                     GlobalVars.inject = LoadLibraryEx.LoadLibrary(hProcess, textDll.Text, loadLibAddy);
+                    funcs.AddToOutputCashe($"Injected DLL with LoadLibraryEx and the DLL: {textDll.Text} to {hProcess.ToString()}");
                     break;
                 case "NtCreateThreadEx":
                     GlobalVars.inject = NtCreateThreadEx.NtCreateThread(hProcess, textDll.Text, loadLibAddy);
+                    funcs.AddToOutputCashe($"Injected DLL with NtcreateThread and the DLL: {textDll.Text} to {hProcess.ToString()}");
                     break;
 
             }

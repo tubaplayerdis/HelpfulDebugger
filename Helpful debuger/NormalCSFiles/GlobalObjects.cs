@@ -19,9 +19,28 @@ using Helpful_debugger;
 
 namespace Helpful_debuger
 {
+    public class Calculator
+    {
+        public void CreateCasheDocument()
+        {
+
+        }
+        public void DeleteCashe()
+        {
+
+        }
+        public void WriteToCashe(string WhatToAdd)
+        {
+
+        }
+        public string ReadCashe()
+        {
+            return "lol";
+        }
+    }
     public class Functions
     {
-        Vars vars = new Vars();
+        Vars vars = new Vars(); 
 
         public void ErrorBoxShow(string Message)
         {
