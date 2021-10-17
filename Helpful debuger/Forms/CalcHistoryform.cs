@@ -63,8 +63,10 @@ namespace Helpful_debugger.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            calc.DeleteCashe();
-
+            if(funcs.QuestionBoxShow("this will delete calcualtor history are you sure"))
+            {
+                calc.DeleteCashe();
+            }           
         }
     }
 }
