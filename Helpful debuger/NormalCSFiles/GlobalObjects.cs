@@ -69,11 +69,13 @@ namespace Helpful_debuger
             if (File.Exists(PathToSecondCashe))
             {
                 File.Delete(PathToSecondCashe);
-                funcs.AddToOutputCashe("Deleted the calculator history");
+                funcs.AddToOutputCashe("Deleted the calculator history and made new file");
+                CreateCasheDocument();
             }
             else
             {
-                funcs.AddToOutputCashe("There was no file to delete and therefor did not delete the second cashe");
+                funcs.AddToOutputCashe("There was no file to delete and therefor did not delete the second cashe and made new file");
+                CreateCasheDocument();
             }
 
         }
