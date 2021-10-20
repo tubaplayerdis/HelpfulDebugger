@@ -273,9 +273,9 @@ namespace Helpful_debuger
             // Infobutton
             // 
             this.Infobutton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infobutton.Location = new System.Drawing.Point(874, 405);
+            this.Infobutton.Location = new System.Drawing.Point(878, 405);
             this.Infobutton.Name = "Infobutton";
-            this.Infobutton.Size = new System.Drawing.Size(375, 33);
+            this.Infobutton.Size = new System.Drawing.Size(371, 33);
             this.Infobutton.TabIndex = 18;
             this.Infobutton.Text = "Information";
             this.Infobutton.UseVisualStyleBackColor = true;
