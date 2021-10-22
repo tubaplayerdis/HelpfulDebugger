@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Helpful_debuger;
-using Helpful_debugger.NormalCSFiles;
+using Helpful_debuger.Methods;
 using Helpful_debugger.Forms;
 using System.Diagnostics;
 
@@ -21,7 +21,7 @@ namespace Helpful_debugger
         Vars vars = new Vars();
         Functions funcs = new Functions();
         Imports imps = new Imports();
-        SimpleConsole simp = new SimpleConsole();
+        
         bool UpdateOutputBoxBool;
         public OutputForm()
         {
@@ -160,11 +160,7 @@ namespace Helpful_debugger
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Consoleform cc = new Consoleform();
-            cc.Show();
-        }
+        
 
         
     }

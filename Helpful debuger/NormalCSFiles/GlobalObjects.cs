@@ -15,10 +15,11 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Helpful_debugger;
 using Helpful_debuger;
-
+using DiscordRPC;
 
 namespace Helpful_debuger
 {
+    
     
     public class Calculator
     {
