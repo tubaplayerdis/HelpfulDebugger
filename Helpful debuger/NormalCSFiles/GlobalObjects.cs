@@ -92,6 +92,8 @@ namespace Helpful_debuger
                 {
                     funcs.AddToOutputCashe(e.ToString());
                 }
+
+                
             }
             else
             {
