@@ -15,7 +15,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Helpful_debugger;
 using Helpful_debuger;
-using DiscordRPC;
+using Microsoft.Win32;
 
 namespace Helpful_debuger
 {   

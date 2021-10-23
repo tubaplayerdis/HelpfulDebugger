@@ -62,11 +62,11 @@ namespace Helpful_debugger
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCatagory = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCounter = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxInstance = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Custom = new System.Diagnostics.PerformanceCounter();
             this.CusLab = new System.Windows.Forms.Label();
@@ -367,15 +367,15 @@ namespace Helpful_debugger
             this.label10.TabIndex = 24;
             this.label10.Text = "Catagory for customizable graph";
             // 
-            // comboBox1
+            // comboBoxCatagory
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(763, 210);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 21);
-            this.comboBox1.TabIndex = 25;
-            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
+            this.comboBoxCatagory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCatagory.FormattingEnabled = true;
+            this.comboBoxCatagory.Location = new System.Drawing.Point(763, 210);
+            this.comboBoxCatagory.Name = "comboBoxCatagory";
+            this.comboBoxCatagory.Size = new System.Drawing.Size(284, 21);
+            this.comboBoxCatagory.TabIndex = 25;
+            this.comboBoxCatagory.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             // 
             // label11
             // 
@@ -387,15 +387,15 @@ namespace Helpful_debugger
             this.label11.TabIndex = 26;
             this.label11.Text = "Instance for customizable graph";
             // 
-            // comboBox2
+            // comboBoxCounter
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(763, 307);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(284, 21);
-            this.comboBox2.TabIndex = 27;
-            this.comboBox2.DropDown += new System.EventHandler(this.comboBox2_DropDown);
+            this.comboBoxCounter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCounter.FormattingEnabled = true;
+            this.comboBoxCounter.Location = new System.Drawing.Point(763, 307);
+            this.comboBoxCounter.Name = "comboBoxCounter";
+            this.comboBoxCounter.Size = new System.Drawing.Size(284, 21);
+            this.comboBoxCounter.TabIndex = 27;
+            this.comboBoxCounter.DropDown += new System.EventHandler(this.comboBox2_DropDown);
             // 
             // button5
             // 
@@ -408,15 +408,15 @@ namespace Helpful_debugger
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // comboBox3
+            // comboBoxInstance
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(763, 261);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(284, 21);
-            this.comboBox3.TabIndex = 29;
-            this.comboBox3.DropDown += new System.EventHandler(this.comboBox3_DropDown);
+            this.comboBoxInstance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxInstance.FormattingEnabled = true;
+            this.comboBoxInstance.Location = new System.Drawing.Point(763, 261);
+            this.comboBoxInstance.Name = "comboBoxInstance";
+            this.comboBoxInstance.Size = new System.Drawing.Size(284, 21);
+            this.comboBoxInstance.TabIndex = 29;
+            this.comboBoxInstance.DropDown += new System.EventHandler(this.comboBox3_DropDown);
             // 
             // label12
             // 
@@ -457,11 +457,11 @@ namespace Helpful_debugger
             this.ClientSize = new System.Drawing.Size(1059, 463);
             this.Controls.Add(this.CusLab);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBoxInstance);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxCounter);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxCatagory);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox4);
@@ -539,11 +539,11 @@ namespace Helpful_debugger
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCatagory;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxCounter;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxInstance;
         private System.Windows.Forms.Label label12;
         private System.Diagnostics.PerformanceCounter Custom;
         private System.Windows.Forms.Label CusLab;

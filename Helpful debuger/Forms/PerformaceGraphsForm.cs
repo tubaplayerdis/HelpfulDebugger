@@ -104,11 +104,8 @@ namespace Helpful_debugger
                 Custom.CounterName = "% User Time";
                 Custom.InstanceName = "_Total";
                 label8.Text = "Catagory: Process, Instance: _Total, Counter: % User Time";
-                if (funcs.ErrorBoxYesNo("The Custom Performance Counter you entered is not valid - REVERTING, See Error?"))
-                {
-                    funcs.ErrorBoxShow(error.ToString());
-                }
-                funcs.InfoBoxShow("Reverted");
+                funcs.AddToOutputCashe(error.ToString());
+                funcs.InfoBoxShow("The Performance counter you entered had an error");
                 
             }
             
@@ -340,39 +337,39 @@ namespace Helpful_debugger
 
         public void GetCatagoryNames()
         {
-            comboBox2.Items.Clear();
-            comboBox3.Items.Clear();
+            comboBoxCounter.Items.Clear();
+            comboBoxInstance.Items.Clear();
             categories = PerformanceCounterCategory.GetCategories();
 
-            comboBox1.Items.Clear();
+            comboBoxCatagory.Items.Clear();
 
             foreach (PerformanceCounterCategory category in categories)
             {
-                comboBox1.Items.Add(category.CategoryName);
+                comboBoxCatagory.Items.Add(category.CategoryName);
             }
         }
 
         public void GetCounterNames()
         {
-            comboBox2.Items.Clear();
+            comboBoxCounter.Items.Clear();
 
-            if (comboBox1.Text.Length == 0)
+            if (comboBoxCatagory.Text.Length == 0)
             {
                 funcs.InfoBoxShow("You need to select a catagory first");
             }
             else
             {
-                pcc1 = new PerformanceCounterCategory(comboBox1.Text);
+                pcc1 = new PerformanceCounterCategory(comboBoxCatagory.Text);
 
-                if (pcc1.InstanceExists(comboBox3.Text))
+                if (pcc1.InstanceExists(comboBoxInstance.Text))
                 {
-                    pcc2 = pcc1.GetCounters(comboBox3.Text);
+                    pcc2 = pcc1.GetCounters(comboBoxInstance.Text);
 
                     
 
                     foreach (PerformanceCounter counter in pcc2)
                     {
-                        comboBox2.Items.Add(counter.CounterName);
+                        comboBoxCounter.Items.Add(counter.CounterName);
                     }
                 }
                 else
@@ -388,22 +385,22 @@ namespace Helpful_debugger
 
         public void GetINstancesNames()
         {
-            comboBox3.Items.Clear();
-            comboBox2.Items.Clear();
-            if (comboBox1.Text.Length == 0)
+            comboBoxInstance.Items.Clear();
+            comboBoxCounter.Items.Clear();
+            if (comboBoxCatagory.Text.Length == 0)
             {
                 funcs.InfoBoxShow("You need to select a catagory first");
             }
             else
             {
                 
-                pcc1 = new PerformanceCounterCategory(comboBox1.Text);
+                pcc1 = new PerformanceCounterCategory(comboBoxCatagory.Text);
 
                 string[] instances = pcc1.GetInstanceNames();
 
                 foreach (string instance in instances)
                 {
-                    comboBox3.Items.Add(instance);
+                    comboBoxInstance.Items.Add(instance);
                 }
             }
             
@@ -413,15 +410,17 @@ namespace Helpful_debugger
         {
             try
             {
-                if(comboBox1.Text.Length == 0 || comboBox2.Text.Length == 0)
+                PerformanceCounterCategory performance;
+                performance = new PerformanceCounterCategory(comboBoxCatagory.Text);
+                if(comboBoxCatagory.Text.Length == 0 || performance.InstanceExists(comboBoxInstance.Text) || performance.CounterExists(comboBoxCounter.Text))
                 {
                     funcs.InfoBoxShow("you need to enter in the information first");
                 } else
                 {
-                    Custom.CategoryName = comboBox1.Text;
-                    Custom.InstanceName = comboBox3.Text;
-                    Custom.CounterName = comboBox2.Text;
-                    label8.Text = $"Catagory: {comboBox1.Text}, Instance: {comboBox3.Text}, Counter: {comboBox2.Text}";
+                    Custom.CategoryName = comboBoxCatagory.Text;
+                    Custom.InstanceName = comboBoxInstance.Text;
+                    Custom.CounterName = comboBoxCounter.Text;
+                    label8.Text = $"Catagory: {comboBoxCatagory.Text}, Instance: {comboBoxInstance.Text}, Counter: {comboBoxCounter.Text}";
                     cus_pt.Clear();
                     funcs.InfoBoxShow("sucsessflly applied settings");
                 }
