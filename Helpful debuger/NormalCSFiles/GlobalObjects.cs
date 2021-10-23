@@ -18,9 +18,7 @@ using Helpful_debuger;
 using DiscordRPC;
 
 namespace Helpful_debuger
-{
-    
-    
+{   
     public class Calculator
     {
         Functions funcs = new Functions();
