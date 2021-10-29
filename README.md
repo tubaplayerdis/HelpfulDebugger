@@ -1,6 +1,6 @@
 ﻿# HelpfulDebugger
 
-This is a simple debugger all you need to do is download the zip file from the releases tab on the side of the screen then follow the instictions on the text file.if you want the latest features with a little instability build the program in visual studio and then run it!
+This is a simple debugger all you need to do is use the installer download the zip file from the releases tab on the side of the screen then follow the instictions on the text file if you want the latest features with a little instability build the program in visual studio and then run it!
 
 NOTES
 - This program only works with windows
