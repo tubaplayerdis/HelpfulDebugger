@@ -21,6 +21,7 @@ namespace Helpful_debuger
 {   
     public class Calculator
     {
+        
         Functions funcs = new Functions();
         string PrePathToSecondCahse = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe";
         string PathToSecondCashe = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\cashe2.txt";

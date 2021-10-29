@@ -146,7 +146,7 @@ namespace Helpful_debugger
                         foreach (string filepath in folderpath)
                         {
                             File.Delete(filepath);
-                            funcs.AddToOutputCashe($"Delected: {filepath}");
+                            funcs.AddToOutputCashe($"Deleted: {filepath}");
                         }
                         funcs.AddToOutputCashe("Cleared Logs");
                     }
