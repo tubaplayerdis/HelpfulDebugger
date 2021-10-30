@@ -22,6 +22,7 @@ namespace Helpful_debugger.Forms
         }
 
         Functions funcs = new Functions();
+        string nl = "\r\n";
         string qu = "\"";
 
         private void button1_Click(object sender, EventArgs e)
@@ -130,11 +131,37 @@ namespace Helpful_debugger.Forms
                     }
                     catch (Exception)
                     {
-                        funcs.ErrorBoxShow("Process " + qu + proccesname + qu + " does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");
+                        funcs.AddToOutputCashe("Process " + qu + proccesname + qu + " does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");
                     }
 
 
                 }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string filepath = openFileDialog1.FileName;
+
+                textBox1.Text = filepath;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filepathtostart = textBox1.Text;
+                Process.Start(filepathtostart);
+                MessageBox.Show("Successfully opened " + qu + filepathtostart + qu, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                funcs.AddToOutputCashe("opened " + filepathtostart);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Make sure the file is a file that can be opened by the filesystem" + nl + "Error: " + error, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
     }

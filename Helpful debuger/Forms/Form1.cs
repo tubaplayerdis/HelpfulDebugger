@@ -291,7 +291,7 @@ namespace Helpful_debuger
                     }
                     catch (Exception)
                     {
-                        funcs.ErrorBoxShow("Process " + qu + proccesname + qu + " does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");                        
+                        funcs.AddToOutputCashe("Process " + qu + proccesname + qu + " does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");                        
                     }
                     
                     
