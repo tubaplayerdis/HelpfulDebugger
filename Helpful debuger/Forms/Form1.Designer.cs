@@ -77,6 +77,7 @@ namespace Helpful_debuger
             this.button16 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CursorDebugCheckBox
@@ -328,7 +329,7 @@ namespace Helpful_debuger
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(12, 444);
+            this.button7.Location = new System.Drawing.Point(12, 481);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(1487, 33);
             this.button7.TabIndex = 23;
@@ -580,11 +581,23 @@ namespace Helpful_debuger
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
+            // button18
+            // 
+            this.button18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Location = new System.Drawing.Point(506, 444);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(366, 31);
+            this.button18.TabIndex = 56;
+            this.button18.Text = "Open task";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1502, 483);
+            this.ClientSize = new System.Drawing.Size(1502, 530);
+            this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button16);
@@ -690,6 +703,7 @@ namespace Helpful_debuger
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
     }
 }
 

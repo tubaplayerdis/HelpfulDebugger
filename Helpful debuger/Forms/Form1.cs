@@ -730,7 +730,7 @@ namespace Helpful_debuger
                 idk.Show();
             } else
             {
-                if (funcs.QuestionBoxShow("Helpful debugger does not have admin permissions adn therefor cannot start the Dll Injortor note: this could cause you to lose unsaved work, Restart now?"))
+                if (funcs.QuestionBoxShow("Helpful debugger does not have admin permissions and therefor cannot start the Dll Injortor note: this could cause you to lose unsaved work, Restart now?"))
                 {
                     try
                     {
@@ -759,6 +759,12 @@ namespace Helpful_debuger
             CalcHistoryform c = new CalcHistoryform();
             c.Show();
             funcs.AddToOutputCashe("Started calc history form");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            TaskMan taskMan = new TaskMan();
+            taskMan.Show();
         }
     }
 }
