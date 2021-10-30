@@ -412,7 +412,7 @@ namespace Helpful_debugger
             {
                 PerformanceCounterCategory performance;
                 performance = new PerformanceCounterCategory(comboBoxCatagory.Text);
-                if(comboBoxCatagory.Text.Length == 0 || performance.InstanceExists(comboBoxInstance.Text) || performance.CounterExists(comboBoxCounter.Text))
+                if(comboBoxCatagory.Text.Length == 0 || !performance.InstanceExists(comboBoxInstance.Text) || !performance.CounterExists(comboBoxCounter.Text))
                 {
                     funcs.InfoBoxShow("you need to enter in the information first");
                 } else
@@ -427,6 +427,7 @@ namespace Helpful_debugger
             } catch (Exception ex)
             {
                 funcs.ErrorBoxShow("There was an error: " + ex.ToString());
+                funcs.AddToOutputCashe("error with performance graphs");
             }
         }
 
