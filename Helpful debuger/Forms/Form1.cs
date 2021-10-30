@@ -291,7 +291,7 @@ namespace Helpful_debuger
                     }
                     catch (Exception)
                     {
-                        funcs.ErrorBoxShow("Process " + qu + proccesname + qu + "does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");                        
+                        funcs.ErrorBoxShow("Process " + qu + proccesname + qu + " does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");                        
                     }
                     
                     
@@ -307,8 +307,8 @@ namespace Helpful_debuger
                 {
                     Process getbyId = Process.GetProcessById(value);
                     getbyId.Kill();
-                    funcs.InfoBoxShow("Killed " + qu + value + qu + "Successfully");
-                    funcs.AddToOutputCashe("Killed " + value);
+                    funcs.InfoBoxShow("Killed " + qu + getbyId.ProcessName + qu + " Successfully");
+                    funcs.AddToOutputCashe("Killed " + getbyId.ProcessName);
                 }
                 catch (Exception)
                 {
@@ -743,7 +743,7 @@ namespace Helpful_debuger
                     }
                     catch (Exception er)
                     {
-                        if (funcs.ErrorBoxYesNo("Procces was either denied or there was an error, see error"))
+                        if (funcs.ErrorBoxYesNo("Procces was either denied admin or there was an error, see error?"))
                         {
                             funcs.ErrorBoxShow(er.ToString());
                         }

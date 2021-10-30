@@ -18,9 +18,11 @@ namespace Helpful_debugger.Forms
         public TaskMan()
         {
             InitializeComponent();
+            Application.EnableVisualStyles();
         }
 
         Functions funcs = new Functions();
+        string qu = "\"";
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,76 +30,112 @@ namespace Helpful_debugger.Forms
         }
 
         private void TaskMan_Load(object sender, EventArgs e)
-        {
-            Application.EnableVisualStyles();
-            bool isAdmin;
-            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-            {
-                WindowsPrincipal principal = new WindowsPrincipal(identity);
-
-                // If is administrator, the variable updates from False to True
-                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
-            }
-            //switch (isAdmin)
-            //{
-                //case true:
-                /*
-                    Process[] currentprocces = Process.GetProcesses();
-                    foreach (Process p in currentprocces)
-                    {
-                        ListViewGroup columnHeader = new ListViewGroup($"{p.ProcessName}", HorizontalAlignment.Left);
-                        columnHeader.Items.Add($"ID: {p.Id}");
-                        columnHeader.Items.Add($"Title: {p.MainWindowTitle}");
-                        columnHeader.Items.Add($"Handle: {p.Handle}");
-                        columnHeader.Items.Add($"Memory size: {p.VirtualMemorySize64}");
-                        columnHeader.Items.Add($"CPU usage: {p.UserProcessorTime}%");
-                        listView1.Groups.Add(columnHeader);
-                        askadminlabel.Visible = false;
-                    }
-                */
-                    //break;
-
-                //case false:
-                
-                    Process[] currentprocce = Process.GetProcesses();
-                    foreach (Process p in currentprocce)
-                    {
-                        ListViewGroup columnHeader = new ListViewGroup($"{p.ProcessName}", HorizontalAlignment.Left);                                               
-                        listView1.Groups.Add(columnHeader);
-                        askadminlabel.Visible = true;
-
-                    }
-            //break;
-            /*
-             * columnHeader.Items.Add($"ID: {p.Id}");
-                columnHeader.Items.Add($"Title: {p.MainWindowTitle}");
-                //columnHeader.Items.Add($"Handle: {p.Handle}");
-                columnHeader.Items.Add($"Memory size: {p.VirtualMemorySize64}");
-                //columnHeader.Items.Add($"CPU usage: {p.UserProcessorTime}%");
-             */
-            //}
-
-
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+        {            
+            
+            GODList.View = View.Details;
+            GODList.Clear();
+            GODList.Columns.Add("Proc Name", 200, HorizontalAlignment.Left).DisplayIndex = 0;
+            GODList.Columns.Add("Proc ID", 200, HorizontalAlignment.Left).DisplayIndex = 1;
+            GODList.Columns.Add("Proc Title", 200, HorizontalAlignment.Left).DisplayIndex = 2;                    
+            GODList.Columns.Add("Proc Mem", 100, HorizontalAlignment.Left).DisplayIndex = 3;
+            ListViewGroup Defutlgroup = new ListViewGroup { Header = "Processes" };
+            GODList.Groups.Add(Defutlgroup);
             Process[] currentprocce = Process.GetProcesses();
             foreach (Process p in currentprocce)
             {
 
-                //listView1.BeginUpdate();
-                funcs.AddToOutputCashe(p.ProcessName);
-                ListViewGroup columnHeader = new ListViewGroup($"{p.ProcessName}", HorizontalAlignment.Left);
-                listView1.Groups.Add(new ListViewGroup($"{p.ProcessName}", HorizontalAlignment.Left));
-                
-                askadminlabel.Visible = true;
-                System.Threading.Thread.Sleep(10);
-                //listView1.EndUpdate();
+                ListViewItem ProcID = new ListViewItem { Text = $"{p.ProcessName}", Group = Defutlgroup };
+                ListViewItem.ListViewSubItem procID = new ListViewItem.ListViewSubItem { Text = $"{p.Id}" };
+                ListViewItem.ListViewSubItem procTitle = new ListViewItem.ListViewSubItem { Text = $"{p.MainWindowTitle}" };                        
+                ListViewItem.ListViewSubItem procMem = new ListViewItem.ListViewSubItem { Text = $"{p.WorkingSet64} bytes" };
+                ProcID.SubItems.Add(procID);
+                ProcID.SubItems.Add(procTitle);                       
+                ProcID.SubItems.Add(procMem);
+                GODList.Items.Add(ProcID);
+
+            }                    
+            GODList.Refresh();
+            funcs.AddToOutputCashe("started taskman");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            GODList.View = View.Details;
+            GODList.Clear();
+            GODList.Columns.Add("Proc Name", 200, HorizontalAlignment.Left).DisplayIndex = 0;
+            GODList.Columns.Add("Proc ID", 200, HorizontalAlignment.Left).DisplayIndex = 1;
+            GODList.Columns.Add("Proc Title", 200, HorizontalAlignment.Left).DisplayIndex = 2;                    
+            GODList.Columns.Add("Proc Mem", 100, HorizontalAlignment.Left).DisplayIndex = 3;
+            ListViewGroup Defutlgroup = new ListViewGroup { Header = "Processes" };
+            GODList.Groups.Add(Defutlgroup);
+            Process[] currentprocce = Process.GetProcesses();
+            foreach (Process p in currentprocce)
+            {
+
+                ListViewItem ProcID = new ListViewItem { Text = $"{p.ProcessName}", Group = Defutlgroup };
+                ListViewItem.ListViewSubItem procID = new ListViewItem.ListViewSubItem { Text = $"{p.Id}" };
+                ListViewItem.ListViewSubItem procTitle = new ListViewItem.ListViewSubItem { Text = $"{p.MainWindowTitle}" };                        
+                ListViewItem.ListViewSubItem procMem = new ListViewItem.ListViewSubItem { Text = $"{p.WorkingSet64} bytes" };
+                ProcID.SubItems.Add(procID);
+                ProcID.SubItems.Add(procTitle);                       
+                ProcID.SubItems.Add(procMem);
+                GODList.Items.Add(ProcID);
+
+            }                    
+            GODList.Refresh();
+            funcs.AddToOutputCashe("refreshed tasklist for taskman");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(IdKillbox.Text, out int value))
+            {
+                try
+                {
+                    Process getbyId = Process.GetProcessById(value);
+                    getbyId.Kill();
+                    funcs.InfoBoxShow("Killed " + qu + getbyId.ProcessName + qu + " Successfully");
+                    funcs.AddToOutputCashe("Killed " + getbyId.ProcessName);
+                }
+                catch (Exception)
+                {
+                    funcs.ErrorBoxShow("The process id " + qu + value + qu + " does not exist");
+                }
+
 
             }
-            listView1.View = View.Details;
+            else
+            {
+                funcs.WarnBoxShow("Please enter a 5 digit number");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string proccesname = Killbynamebox.Text;
+            Process[] getbyname = Process.GetProcessesByName(proccesname);
+            if (getbyname.Length == 0)
+            {
+                funcs.ErrorBoxShow("The process name " + qu + proccesname + qu + " does not exist");
+            }
+            else
+            {
+                foreach (var proccesvar in getbyname)
+                {
+                    try
+                    {
+                        proccesvar.Kill();
+                        funcs.InfoBoxShow("Killed " + qu + proccesname + qu);
+                        funcs.AddToOutputCashe("Killed " + proccesname);
+                    }
+                    catch (Exception)
+                    {
+                        funcs.ErrorBoxShow("Process " + qu + proccesname + qu + " does not exist therefore it cannot be terminated, if you are seeing this it is most likely bug");
+                    }
+
+
+                }
+            }
         }
     }
 }
