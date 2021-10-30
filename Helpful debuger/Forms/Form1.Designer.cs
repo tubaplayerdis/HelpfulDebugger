@@ -274,9 +274,9 @@ namespace Helpful_debuger
             // Infobutton
             // 
             this.Infobutton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infobutton.Location = new System.Drawing.Point(878, 405);
+            this.Infobutton.Location = new System.Drawing.Point(1070, 405);
             this.Infobutton.Name = "Infobutton";
-            this.Infobutton.Size = new System.Drawing.Size(371, 33);
+            this.Infobutton.Size = new System.Drawing.Size(179, 33);
             this.Infobutton.TabIndex = 18;
             this.Infobutton.Text = "Information";
             this.Infobutton.UseVisualStyleBackColor = true;
@@ -329,7 +329,7 @@ namespace Helpful_debuger
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(12, 481);
+            this.button7.Location = new System.Drawing.Point(12, 444);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(1487, 33);
             this.button7.TabIndex = 23;
@@ -584,11 +584,11 @@ namespace Helpful_debuger
             // button18
             // 
             this.button18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(506, 444);
+            this.button18.Location = new System.Drawing.Point(878, 405);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(366, 31);
+            this.button18.Size = new System.Drawing.Size(186, 33);
             this.button18.TabIndex = 56;
-            this.button18.Text = "Open task";
+            this.button18.Text = "Open Task Manager";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
@@ -596,7 +596,7 @@ namespace Helpful_debuger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1502, 530);
+            this.ClientSize = new System.Drawing.Size(1502, 483);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.label6);

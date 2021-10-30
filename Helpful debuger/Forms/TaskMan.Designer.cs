@@ -190,9 +190,10 @@ namespace Helpful_debugger.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.GODList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TaskMan";
-            this.Text = "TaskMan";
+            this.Text = "Helpful Debugger - Task Manager";
             this.Load += new System.EventHandler(this.TaskMan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
