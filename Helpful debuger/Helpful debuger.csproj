@@ -119,12 +119,6 @@
     <Compile Include="Forms\TaskMan.Designer.cs">
       <DependentUpon>TaskMan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Unblocked.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Unblocked.Designer.cs">
-      <DependentUpon>Unblocked.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\OutputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskMan.resx">
       <DependentUpon>TaskMan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Unblocked.resx">
-      <DependentUpon>Unblocked.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

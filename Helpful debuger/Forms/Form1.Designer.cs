@@ -73,7 +73,6 @@ namespace Helpful_debuger
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
@@ -274,9 +273,9 @@ namespace Helpful_debuger
             // Infobutton
             // 
             this.Infobutton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infobutton.Location = new System.Drawing.Point(1070, 405);
+            this.Infobutton.Location = new System.Drawing.Point(878, 405);
             this.Infobutton.Name = "Infobutton";
-            this.Infobutton.Size = new System.Drawing.Size(179, 33);
+            this.Infobutton.Size = new System.Drawing.Size(371, 33);
             this.Infobutton.TabIndex = 18;
             this.Infobutton.Text = "Information";
             this.Infobutton.UseVisualStyleBackColor = true;
@@ -538,17 +537,6 @@ namespace Helpful_debuger
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(1255, 146);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(244, 45);
-            this.button15.TabIndex = 52;
-            this.button15.Text = "Open Web Browser";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
             // button16
             // 
             this.button16.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -584,9 +572,9 @@ namespace Helpful_debuger
             // button18
             // 
             this.button18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(878, 405);
+            this.button18.Location = new System.Drawing.Point(1255, 146);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(186, 33);
+            this.button18.Size = new System.Drawing.Size(244, 45);
             this.button18.TabIndex = 56;
             this.button18.Text = "Open Task Manager";
             this.button18.UseVisualStyleBackColor = true;
@@ -601,7 +589,6 @@ namespace Helpful_debuger
             this.Controls.Add(this.button17);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button13);
@@ -699,7 +686,6 @@ namespace Helpful_debuger
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button17;
