@@ -414,7 +414,7 @@ namespace Helpful_debugger
                 performance = new PerformanceCounterCategory(comboBoxCatagory.Text);
                 if(comboBoxCatagory.Text.Length == 0 || !performance.InstanceExists(comboBoxInstance.Text) || !performance.CounterExists(comboBoxCounter.Text))
                 {
-                    funcs.InfoBoxShow("you need to enter in the information first");
+                    funcs.InfoBoxShow("you need to enter in the information first or the counter does not exist");
                 } else
                 {
                     Custom.CategoryName = comboBoxCatagory.Text;
