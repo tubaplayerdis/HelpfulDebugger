@@ -25,8 +25,10 @@ namespace Helpful_debugger
         Functions funcs = new Functions();
 
         //Variables
+        
         string jsfilepath;
         string nl = "\r\n";
+
         
        
 
@@ -35,18 +37,26 @@ namespace Helpful_debugger
         {
             try
             {
-                ProcessStartInfo info = new ProcessStartInfo("cmd.exe");
-                info.Arguments = $"/K node {jsfilepath}";
-                if (String.IsNullOrEmpty(jsfilepath))
+                if (SaveFile())
                 {
-                    MessageBox.Show("The filepath you gave does not exist or you have not selected one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ProcessStartInfo info = new ProcessStartInfo("cmd.exe");
+                    info.Arguments = $"/K node {jsfilepath}";
+                    if (String.IsNullOrEmpty(jsfilepath))
+                    {
+                        MessageBox.Show("The filepath you gave does not exist or you have not selected one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        Process.Start(info);
+                        MessageBox.Show("File was run, if there is a blank node box then there was no file specified", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        funcs.AddToOutputCashe("Ran JS File");
+                    }
                 }
                 else
                 {
-                    Process.Start(info);
-                    MessageBox.Show("File was run, if there is a blank node box then there was no file specified", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    funcs.AddToOutputCashe("Ran JS File");
+                    funcs.InfoBoxShow("File could not be run because it could not be saved");
                 }
+               
 
 
 
@@ -141,6 +151,35 @@ namespace Helpful_debugger
             }
         }
 
+        public bool SaveFile()
+        {
+            try
+            {
+                if (MessageBox.Show("Please confirm before saving" + "\n" + "Do you want to save ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    File.WriteAllText(jsfilepath, EditScriptBox.Text.ToString());
+                    //MessageBox.Show("File was saved", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    vars.SetSaved(true);
+                    Filesavedbox.Checked = vars.GetSaved();
+                    funcs.AddToOutputCashe("saved Js file");
+                    return true;
+                }
+                else
+                {
+                    //MessageBox.Show("File was not saved", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+
+
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error this might be your antivirus or you have no file selected" + nl + "Error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -151,8 +190,8 @@ namespace Helpful_debugger
                     jsfilepath = filepathofJS;
                     string contentsoffile = File.ReadAllText(filepathofJS);
                     EditScriptBox.Text = contentsoffile;
-                    FileOpenCurrently.Text = "Current file open: " + jsfilepath;                   
-
+                    FileOpenCurrently.Text = "Current file open: " + jsfilepath;
+                    EditScriptBox.ReadOnly = false;
 
                 }
             } catch(Exception er)
@@ -191,6 +230,20 @@ namespace Helpful_debugger
         private void EditorForm_Activated(object sender, EventArgs e)
         {
             funcs.AddToOutputCashe("Clicked EditorForm");
+        }
+
+        private void EditorForm_Load(object sender, EventArgs e)
+        {
+            EditScriptBox.ReadOnly = true;
+        }
+
+        private void EditScriptBox_Click(object sender, EventArgs e)
+        {
+            if (EditScriptBox.ReadOnly)
+            {
+                funcs.InfoBoxShow("You need to select a file to start editing");
+            }
+            
         }
     }
 }

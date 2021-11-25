@@ -45,7 +45,7 @@ namespace Helpful_debugger.Forms
                     Calchistorybox.Text = calc.ReadCashe();
                 } catch(Exception)
                 {
-                    funcs.AddToOutputCashe("Error creating window handle for calc his");
+                    funcs.AddToOutputCashe("Error reading cashe for calc history");
                 }                
                 System.Threading.Thread.Sleep(10);
             } while (dowork == true);
@@ -63,7 +63,7 @@ namespace Helpful_debugger.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(funcs.QuestionBoxShow("this will delete calcualtor history are you sure"))
+            if(funcs.QuestionBoxShow("This will delete calculator history, are you sure?"))
             {
                 calc.DeleteCashe();
             }           

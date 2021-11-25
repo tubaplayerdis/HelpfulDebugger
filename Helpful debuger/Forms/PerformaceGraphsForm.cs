@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using Helpful_debuger;
-
+using System.Runtime.InteropServices;
 
 namespace Helpful_debugger
 {
     public partial class PerformaceGraphsForm : Form
     {
+        [DllImport("C:\\Users\\aaron\\source\\repos\\DLLTest1\\Debug\\DLLTest1.dll", EntryPoint = "Add", CallingConvention = CallingConvention.StdCall)]
+        public static extern int Add(int bases, int addative);
+
         int x = 0;
         List<Point> cpu_pt = new List<Point>();
         List<Point> ram_pt = new List<Point>();
@@ -445,6 +448,8 @@ namespace Helpful_debugger
         {
 
         }
+
+        
 
 
 
