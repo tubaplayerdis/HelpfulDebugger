@@ -105,9 +105,16 @@ namespace Helpful_debugger
         {
             try
             {
-                Process.Start(jsfilepath);
-                MessageBox.Show("Successfully ran file with windows script host", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                funcs.AddToOutputCashe("Ran file with WSH");
+                if (SaveFile())
+                {
+                    Process.Start(jsfilepath);
+                    MessageBox.Show("Successfully ran file with windows script host", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    funcs.AddToOutputCashe("Ran file with WSH");
+                } else
+                {
+                    funcs.InfoBoxShow("Did not run file as it failed to save");
+                }
+                
             }
             catch (Exception error)
             {

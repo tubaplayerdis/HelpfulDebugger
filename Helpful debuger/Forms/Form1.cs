@@ -116,7 +116,7 @@ namespace Helpful_debuger
             return string.Format("{0:n1} {1}", adjustedSize, SizeSuffixes[mag]);
         }
 
-        // 8===== > {()} 69 nine lol
+        
 
         /*
         try

@@ -297,6 +297,8 @@ namespace Helpful_debuger
         
     }
 
+   
+
     public class Imports
     {
         [DllImport("user32.dll")]
