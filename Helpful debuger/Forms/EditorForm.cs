@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Helpful_debuger;
@@ -29,8 +30,8 @@ namespace Helpful_debugger
         string jsfilepath;
         string nl = "\r\n";
 
+
         
-       
 
 
         public void TryToRunFile()
@@ -39,9 +40,12 @@ namespace Helpful_debugger
             {
                 if (SaveFile())
                 {
+                    string lol = jsfilepath.Replace("\\", "/");
+                    string yes = $"\"{lol}\"";
                     ProcessStartInfo info = new ProcessStartInfo("cmd.exe");
-                    info.Arguments = $"/K node {jsfilepath}";
-                    if (String.IsNullOrEmpty(jsfilepath))
+                    
+                    info.Arguments = $"/K node {yes}";
+                    if (String.IsNullOrEmpty(yes))
                     {
                         MessageBox.Show("The filepath you gave does not exist or you have not selected one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
