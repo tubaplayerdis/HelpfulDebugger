@@ -187,10 +187,12 @@ namespace Helpful_debuger
                 File.AppendAllText(cahsefile, content + "\r\n");
             } catch (Exception e)
             {
+                /*
                 if(ErrorBoxYesNo("Slow down buddy, also do you want to see the error"))
                 {
                     ErrorBoxShow(e.ToString());                                       
                 }
+                */
             }
             
         }
