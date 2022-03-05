@@ -19,6 +19,8 @@ using Microsoft.Win32;
 
 namespace Helpful_debuger
 {   
+    
+
     public class Calculator
     {
         
