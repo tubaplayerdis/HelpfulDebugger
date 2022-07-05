@@ -41,15 +41,13 @@ namespace Helpful_debugger
             this.OpenJSfile = new System.Windows.Forms.OpenFileDialog();
             this.button5 = new System.Windows.Forms.Button();
             this.Filesavedbox = new System.Windows.Forms.CheckBox();
-            this.OpenScirptingFormButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 18);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(9, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 19);
             this.label6.TabIndex = 39;
@@ -57,23 +55,21 @@ namespace Helpful_debugger
             // 
             // FileOpenCurrently
             // 
-            this.FileOpenCurrently.Location = new System.Drawing.Point(225, 18);
-            this.FileOpenCurrently.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FileOpenCurrently.Location = new System.Drawing.Point(150, 12);
             this.FileOpenCurrently.Name = "FileOpenCurrently";
             this.FileOpenCurrently.ReadOnly = true;
-            this.FileOpenCurrently.Size = new System.Drawing.Size(1252, 26);
+            this.FileOpenCurrently.Size = new System.Drawing.Size(836, 20);
             this.FileOpenCurrently.TabIndex = 42;
             this.FileOpenCurrently.Text = "Current file open:";
             // 
             // EditScriptBox
             // 
             this.EditScriptBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditScriptBox.Location = new System.Drawing.Point(18, 58);
-            this.EditScriptBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.EditScriptBox.Location = new System.Drawing.Point(12, 38);
             this.EditScriptBox.Multiline = true;
             this.EditScriptBox.Name = "EditScriptBox";
             this.EditScriptBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.EditScriptBox.Size = new System.Drawing.Size(1555, 636);
+            this.EditScriptBox.Size = new System.Drawing.Size(1038, 415);
             this.EditScriptBox.TabIndex = 43;
             this.EditScriptBox.Click += new System.EventHandler(this.EditScriptBox_Click);
             this.EditScriptBox.TextChanged += new System.EventHandler(this.EditScriptBox_TextChanged);
@@ -81,10 +77,9 @@ namespace Helpful_debugger
             // RunScriptBTWSH
             // 
             this.RunScriptBTWSH.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RunScriptBTWSH.Location = new System.Drawing.Point(18, 706);
-            this.RunScriptBTWSH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RunScriptBTWSH.Location = new System.Drawing.Point(12, 459);
             this.RunScriptBTWSH.Name = "RunScriptBTWSH";
-            this.RunScriptBTWSH.Size = new System.Drawing.Size(980, 52);
+            this.RunScriptBTWSH.Size = new System.Drawing.Size(1038, 34);
             this.RunScriptBTWSH.TabIndex = 44;
             this.RunScriptBTWSH.Text = "Run JS script (WSH)";
             this.RunScriptBTWSH.UseVisualStyleBackColor = true;
@@ -93,10 +88,9 @@ namespace Helpful_debugger
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(18, 768);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(12, 499);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1557, 51);
+            this.button1.Size = new System.Drawing.Size(1038, 33);
             this.button1.TabIndex = 43;
             this.button1.Text = "Run JS script (Node.js)";
             this.button1.UseVisualStyleBackColor = true;
@@ -105,10 +99,9 @@ namespace Helpful_debugger
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(18, 825);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(12, 536);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(1557, 51);
+            this.button2.Size = new System.Drawing.Size(1038, 33);
             this.button2.TabIndex = 39;
             this.button2.Text = "Open JS script in editor";
             this.button2.UseVisualStyleBackColor = true;
@@ -117,10 +110,9 @@ namespace Helpful_debugger
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(18, 885);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(12, 575);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1557, 51);
+            this.button3.Size = new System.Drawing.Size(1038, 33);
             this.button3.TabIndex = 40;
             this.button3.Text = "Save changes to JS script";
             this.button3.UseVisualStyleBackColor = true;
@@ -129,10 +121,9 @@ namespace Helpful_debugger
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(18, 945);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(12, 614);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(1557, 51);
+            this.button4.Size = new System.Drawing.Size(1038, 33);
             this.button4.TabIndex = 42;
             this.button4.Text = "Check if node.js is installed";
             this.button4.UseVisualStyleBackColor = true;
@@ -145,10 +136,9 @@ namespace Helpful_debugger
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(18, 1005);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Location = new System.Drawing.Point(12, 653);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(1557, 51);
+            this.button5.Size = new System.Drawing.Size(1038, 33);
             this.button5.TabIndex = 45;
             this.button5.Text = "Close Editor";
             this.button5.UseVisualStyleBackColor = true;
@@ -158,32 +148,18 @@ namespace Helpful_debugger
             // 
             this.Filesavedbox.AutoCheck = false;
             this.Filesavedbox.AutoSize = true;
-            this.Filesavedbox.Location = new System.Drawing.Point(1488, 23);
-            this.Filesavedbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Filesavedbox.Location = new System.Drawing.Point(992, 15);
             this.Filesavedbox.Name = "Filesavedbox";
-            this.Filesavedbox.Size = new System.Drawing.Size(82, 24);
+            this.Filesavedbox.Size = new System.Drawing.Size(63, 17);
             this.Filesavedbox.TabIndex = 46;
             this.Filesavedbox.Text = "Saved?";
             this.Filesavedbox.UseVisualStyleBackColor = true;
             // 
-            // OpenScirptingFormButton
-            // 
-            this.OpenScirptingFormButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenScirptingFormButton.Location = new System.Drawing.Point(1006, 706);
-            this.OpenScirptingFormButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.OpenScirptingFormButton.Name = "OpenScirptingFormButton";
-            this.OpenScirptingFormButton.Size = new System.Drawing.Size(569, 52);
-            this.OpenScirptingFormButton.TabIndex = 47;
-            this.OpenScirptingFormButton.Text = "Helpful Debugger Scripting";
-            this.OpenScirptingFormButton.UseVisualStyleBackColor = true;
-            this.OpenScirptingFormButton.Click += new System.EventHandler(this.OpenScirptingFormButton_Click);
-            // 
             // EditorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1599, 1061);
-            this.Controls.Add(this.OpenScirptingFormButton);
+            this.ClientSize = new System.Drawing.Size(1066, 690);
             this.Controls.Add(this.Filesavedbox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.RunScriptBTWSH);
@@ -196,8 +172,7 @@ namespace Helpful_debugger
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1612, 1037);
+            this.MinimumSize = new System.Drawing.Size(1080, 688);
             this.Name = "EditorForm";
             this.Text = "Helpful Debugger - Script Editor";
             this.Activated += new System.EventHandler(this.EditorForm_Activated);
@@ -220,6 +195,5 @@ namespace Helpful_debugger
         private System.Windows.Forms.OpenFileDialog OpenJSfile;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.CheckBox Filesavedbox;
-        private System.Windows.Forms.Button OpenScirptingFormButton;
     }
 }

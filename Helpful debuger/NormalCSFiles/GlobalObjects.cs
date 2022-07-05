@@ -25,8 +25,8 @@ namespace Helpful_debuger
     {
         
         Functions funcs = new Functions();
-        string PrePathToSecondCahse = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe";
-        string PathToSecondCashe = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\cashe2.txt";
+        string PrePathToSecondCahse = Application.StartupPath + @"\Helpful_Debgger_Data\cashe";
+        string PathToSecondCashe = Application.StartupPath + @"\Helpful_Debgger_Data\cashe\cashe2.txt";
         DateTime utcDate = DateTime.UtcNow;
         private bool DoesDocumentExist()
         {
@@ -43,7 +43,7 @@ namespace Helpful_debuger
 
         public void CreateCasheDocument()
         {
-            if(Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe"))
+            if(Directory.Exists(Application.StartupPath + @"\Helpful_Debgger_Data\cashe"))
             {
                 
                 if(File.Exists(PrePathToSecondCahse + @"\cashe2.txt"))
@@ -133,7 +133,7 @@ namespace Helpful_debuger
     public class Functions
     {
         Vars vars = new Vars();
-        string cahsefile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\cashe\chache1.txt";
+        string cahsefile = Application.StartupPath + @"\Helpful_Debgger_Data\cashe\chache1.txt";
 
         public void ErrorBoxShow(string Message)
         {
@@ -246,7 +246,7 @@ namespace Helpful_debuger
         
         public void CreateAppDataFolder()
         {
-            string preappdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string preappdata = Application.StartupPath;
             //MessageBox.Show(preappdata);
             AppDataFolder = preappdata + @"\Helpful_Debgger_Data";
             if (Directory.Exists(AppDataFolder))

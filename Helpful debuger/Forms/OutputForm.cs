@@ -34,7 +34,8 @@ namespace Helpful_debugger
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            OutputBox.Text = "";
+            funcs.ClearOutputCashe();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,9 +45,9 @@ namespace Helpful_debugger
             DateTime utcDate = DateTime.UtcNow;
             
             
-            if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data"))
+            if (Directory.Exists(Application.StartupPath + @"\Helpful_Debgger_Data"))
             {
-                folderpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data";
+                folderpath = Application.StartupPath + @"\Helpful_Debgger_Data";
                 string cache = utcDate.ToString("yyyy_MM_dd_tt_mm_ffff");
                 
                 filepath = folderpath + @"\Entry" + cache + ".txt";
@@ -58,14 +59,12 @@ namespace Helpful_debugger
                     if(funcs.QuestionBoxShow("File " + filepath + " already exists overwrite?"))
                     {
                         File.WriteAllText(filepath, funcs.ReadOutputCashe());
-                        OutputBox.Text = "";
-                        funcs.ClearOutputCashe();
+                        
                     }
                 } else
                 {
                     File.WriteAllText(filepath, funcs.ReadOutputCashe());
-                    OutputBox.Text = "";
-                    funcs.ClearOutputCashe();
+                    
 
                 }
                 
@@ -116,7 +115,7 @@ namespace Helpful_debugger
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            string folderpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data";
+            string folderpath = Application.StartupPath + @"\Helpful_Debgger_Data";
             Process.Start("explorer.exe", folderpath);
         }
 
@@ -129,9 +128,9 @@ namespace Helpful_debugger
         {
             try
             {
-                string[] folderpath = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Helpful_Debgger_Data\", "Entry*.txt", SearchOption.AllDirectories);
+                string[] folderpath = Directory.GetFiles(Application.StartupPath + @"\Helpful_Debgger_Data\", "Entry*.txt", SearchOption.AllDirectories);
 
-                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"Helpful_Debgger_Data"))
+                if (Directory.Exists(Application.StartupPath + @"Helpful_Debgger_Data"))
                 {
                     funcs.InfoBoxShow("The appdata folder does not exist");
                 }

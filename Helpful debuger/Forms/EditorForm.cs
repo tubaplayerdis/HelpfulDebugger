@@ -257,10 +257,6 @@ namespace Helpful_debugger
             
         }
 
-        private void OpenScirptingFormButton_Click(object sender, EventArgs e)
-        {
-            Forms.Scripting scripting = new Forms.Scripting();
-            scripting.Show();
-        }
+        
     }
 }
