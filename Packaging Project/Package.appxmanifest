@@ -7,9 +7,9 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="HelpfulDebugger96ca38d-2cb8-44b8-86b5-39AaronWilk"
-    Publisher="CN=Aaron Wilk"
-    Version="1.2.2.0" />
+    Name="13568AaronWilk.HelpfulDebugger"
+    Publisher="CN=4D6FF22C-0289-4769-844E-27F1DEE2CE56"
+    Version="1.2.6.0" />
 
   <Properties>
     <DisplayName>Helpful Debugger</DisplayName>
@@ -44,7 +44,6 @@
   </Applications>
 
   <Capabilities>
-    <Capability Name="internetClient" />
     <rescap:Capability Name="runFullTrust" />
   </Capabilities>
 </Package>
